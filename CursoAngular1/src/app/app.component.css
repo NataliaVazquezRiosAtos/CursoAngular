@@ -1,5 +1,11 @@
 /* estilos propios del componente */ 
 
-.caja{
-    margin-top: 3em;
+.cajaModulo{
+    border: 1px solid #0275D8;
+    padding: 2em;
+    margin-top: 2em;
+}
+
+.cajaApp{    
+    background-color: #D8EAFA;
 }

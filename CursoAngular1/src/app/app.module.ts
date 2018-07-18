@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 
 /* importa los componentes creados */
 import { AppComponent } from './app.component';
+import { FechaactualComponent } from './fechaactual/fechaactual.component';
 
 /* para el componente */
 @NgModule({
 
   /* se declaran los componentes */
   declarations: [
-    AppComponent
+    AppComponent,
+    FechaactualComponent
   ],
 
   /* importaciones de angular */ 

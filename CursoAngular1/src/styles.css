@@ -2,6 +2,14 @@
 
 .container{
     margin-top: 2em;
+    border: 2px solid #ddd;
+    padding: 2em;
+}
+
+/* estilos comunes todaslas vistas de todos los componentes */
+.caja{
+    margin-top: 3em;
+    padding: 2em;
 }
 
 h1{

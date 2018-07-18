@@ -1,12 +1,18 @@
 <!-- es la plantilla del componente : solo que queremos que se nos vea en nuestro componente -->
 
-<div class="caja text-center"> 
+<div class=" cajaModulo text-center"> 
 
-  <h1 class="text-danger">ESTO ESTA ESCRITO DESDE EL COMPONENTE</h1>
+  <h1 class="text-primary">MODULO</h1>
 
-  <!-- {{ title }} ,  {{ destino }}: renderiza los valores que tienen las variables del componente  -->
-  <h2 class="text-info">Bienvenid@  {{ title }}!</h2>
-  <h2 class="text-info">Tu destino es : {{ destino }}</h2>  
+  <div class="caja cajaApp">
+    <h1 class="text-danger">COMPONENTE APP</h1>
+
+    <!-- {{ title }} ,  {{ destino }}: renderiza los valores que tienen las variables del componente  -->
+    <h2 class="text-success">Bienvenid@  {{ title }}!</h2>
+    <h2 class="text-success">Tu destino es : {{ destino }}</h2>  
+  </div>
+
+  <app-fechaactual></app-fechaactual>
 
 </div>
 
