@@ -21,7 +21,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  /* se crea una variable para despues usarla en la plantilla */
+  /* se crean una variables para despues usarlas en la plantilla */
   title = 'Naty';
+  destino: string = 'Madrid';
 
 }

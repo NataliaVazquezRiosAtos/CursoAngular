@@ -1,40 +1,27 @@
 # CursoAngular1
 
-INSTALACIONES PREVIAS
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-1. Instalación de Node y NPM :
-    https://nodejs.org/es/
+## Development server
 
-2. Instalación de TypeScript ( desde consola ) :
-    npm install -g typescript
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-3. Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
-    node -v
-    npm -v
-    tsc -v
+## Code scaffolding
 
-4. Instalación de VisualStudio :
-    https://code.visualstudio.com/
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-5. Instalación de Angular/cli ( desde consola ) :
-    npm install -g @angular/cli
+## Build
 
-PRIMER PROYECTO ANGULAR
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-1. Para crear un nuevo proyecto ( desde consola ):
-    ng new nombreProyecto
+## Running unit tests
 
-2. Para arrancar la aplicación ( desde consola y dentro del directorio del proyecto creado ) :
-    ng serve  ( en el navegador ponemos : localhost:4200 )   
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-3. Para parar el servdor ( desde consola ): 
-    ctrl + c
+## Running end-to-end tests
 
-4. Si queremos cambiar el puerto: 
-    ng serve --port 3000 ( en el navegador ponemos : localhost:3000 )   
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
+## Further help
 
- *src *assets : archivos estaticos de la aplicacion ( principalmente imagenes )
-
- *src *app : modulos y componentes de la aplicacion
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
