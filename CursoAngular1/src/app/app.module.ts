@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { FechaactualComponent } from './fechaactual/fechaactual.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { ViewmodelComponent } from './viewmodel/viewmodel.component';
+import { EjemplometodoComponent } from './ejemplometodo/ejemplometodo.component';
+import { EjemplopropertybindingComponent } from './ejemplopropertybinding/ejemplopropertybinding.component';
 
 /* para el componente */
 @NgModule({
@@ -17,7 +19,9 @@ import { ViewmodelComponent } from './viewmodel/viewmodel.component';
     AppComponent,
     FechaactualComponent,
     CopyrightComponent,
-    ViewmodelComponent
+    ViewmodelComponent,
+    EjemplometodoComponent,
+    EjemplopropertybindingComponent
   ],
 
   /* importaciones de angular */ 

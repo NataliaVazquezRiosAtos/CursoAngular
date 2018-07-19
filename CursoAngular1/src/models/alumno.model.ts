@@ -20,8 +20,5 @@ export class Alumno{
         this.ciudad = ciudad;
 
     }
-
-
-
-
+    
 }
