@@ -2,6 +2,8 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 /* importa los componentes creados */
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { ViewmodelComponent } from './viewmodel/viewmodel.component';
 import { EjemplometodoComponent } from './ejemplometodo/ejemplometodo.component';
 import { EjemplopropertybindingComponent } from './ejemplopropertybinding/ejemplopropertybinding.component';
 import { EjemploeventbindingComponent } from './ejemploeventbinding/ejemploeventbinding.component';
+import { Ejemplo2waybindingComponent } from './ejemplo2waybinding/ejemplo2waybinding.component';
 
 /* para el componente */
 @NgModule({
@@ -23,12 +26,14 @@ import { EjemploeventbindingComponent } from './ejemploeventbinding/ejemploevent
     ViewmodelComponent,
     EjemplometodoComponent,
     EjemplopropertybindingComponent,
-    EjemploeventbindingComponent
+    EjemploeventbindingComponent,
+    Ejemplo2waybindingComponent
   ],
 
   /* importaciones de angular */ 
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
 
   /* servicios : para utilizarlos en todos los componentes */ 

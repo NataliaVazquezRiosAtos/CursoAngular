@@ -1,0 +1,19 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja cajaEjemplo2WayBinding"> 
+
+  <h1 class="text-danger">COMPONENTE EJEMPLOM2WAYBINDING</h1>
+  <div class="form-group">
+    <label class="text-success text-left">Escribe un texto</label>
+
+    <!-- metodo two way binding -->
+    <!-- de vista a componente | de componente a vista -->
+    <!-- [()] : nomenclatura conocida como bananabox -->
+    <!-- ngModel es una directiva -->
+
+    <input type="text" class="form-control" [(ngModel)]="texto" >
+
+  </div>
+  <h2 class="text-success text-left"> {{ texto }} </h2>
+    
+</div> 
