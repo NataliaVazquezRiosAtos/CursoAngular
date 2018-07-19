@@ -1,27 +1,47 @@
 # CursoAngular1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+INSTALACIONES PREVIAS
 
-## Development server
+1. Instalación de Node y NPM :
+    https://nodejs.org/es/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. Instalación de TypeScript ( desde consola ) :
+    npm install -g typescript
 
-## Code scaffolding
+3. Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
+    node -v
+    npm -v
+    tsc -v
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. Instalación de VisualStudio :
+    https://code.visualstudio.com/
 
-## Build
+5. Instalación de Angular/cli ( desde consola ) :
+    npm install -g @angular/cli
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+PRIMER PROYECTO ANGULAR
 
-## Running unit tests
+1. Para crear un nuevo proyecto ( desde consola ):
+    ng new nombreProyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Para arrancar la aplicación ( desde consola y dentro del directorio del proyecto creado ) :
+    ng serve  ( en el navegador ponemos : localhost:4200 )   
 
-## Running end-to-end tests
+3. Para parar el servdor ( desde consola ): 
+    ctrl + c
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4. Si queremos cambiar el puerto: 
+    ng serve --port 3000 ( en el navegador ponemos : localhost:3000 )   
 
-## Further help
+ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    *src *assets : archivos estaticos de la aplicacion ( principalmente imagenes )
+
+    *src *app : modulos y componentes de la aplicacion
+
+ CREACION DE COMPONENTES DESDE CONSOLA
+
+    ng generate component nombreComponente --spec false
+
+    ( con '--spec false' se especifica que no cree el archivo de testing )
+    
