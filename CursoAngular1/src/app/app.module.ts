@@ -10,6 +10,7 @@ import { CopyrightComponent } from './copyright/copyright.component';
 import { ViewmodelComponent } from './viewmodel/viewmodel.component';
 import { EjemplometodoComponent } from './ejemplometodo/ejemplometodo.component';
 import { EjemplopropertybindingComponent } from './ejemplopropertybinding/ejemplopropertybinding.component';
+import { EjemploeventbindingComponent } from './ejemploeventbinding/ejemploeventbinding.component';
 
 /* para el componente */
 @NgModule({
@@ -21,7 +22,8 @@ import { EjemplopropertybindingComponent } from './ejemplopropertybinding/ejempl
     CopyrightComponent,
     ViewmodelComponent,
     EjemplometodoComponent,
-    EjemplopropertybindingComponent
+    EjemplopropertybindingComponent,
+    EjemploeventbindingComponent
   ],
 
   /* importaciones de angular */ 
