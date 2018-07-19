@@ -1,0 +1,19 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja cajaEjemploDirectivaNgIf"> 
+
+    <h1 class="text-danger">COMPONENTE EJEMPLODIRECTIVANGIF</h1>
+    <div class="form-group">
+      <label class="text-success text-left">Nombre y Apellidos</label>    
+  
+      <input type="text" class="form-control" placeholder="Complete su nombre y apellidos" [(ngModel)]="nombre" >
+  
+    </div>
+
+    <!-- directiva estructural if -->
+    <!-- antes de una directiva hay que poner siempre * -->
+    <!-- esta condicion if nos mostrara el boton si la variable nombre no es nula -->
+
+    <button type="submit" class="btn btn-primary" *ngIf="nombre">Enviar</button>   
+      
+  </div>

@@ -14,6 +14,7 @@ import { EjemplometodoComponent } from './ejemplometodo/ejemplometodo.component'
 import { EjemplopropertybindingComponent } from './ejemplopropertybinding/ejemplopropertybinding.component';
 import { EjemploeventbindingComponent } from './ejemploeventbinding/ejemploeventbinding.component';
 import { Ejemplo2waybindingComponent } from './ejemplo2waybinding/ejemplo2waybinding.component';
+import { EjemplodirectivangifComponent } from './ejemplodirectivangif/ejemplodirectivangif.component';
 
 /* para el componente */
 @NgModule({
@@ -27,7 +28,8 @@ import { Ejemplo2waybindingComponent } from './ejemplo2waybinding/ejemplo2waybin
     EjemplometodoComponent,
     EjemplopropertybindingComponent,
     EjemploeventbindingComponent,
-    Ejemplo2waybindingComponent
+    Ejemplo2waybindingComponent,
+    EjemplodirectivangifComponent
   ],
 
   /* importaciones de angular */ 
