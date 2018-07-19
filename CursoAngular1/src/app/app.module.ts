@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FechaactualComponent } from './fechaactual/fechaactual.component';
 import { CopyrightComponent } from './copyright/copyright.component';
+import { ViewmodelComponent } from './viewmodel/viewmodel.component';
 
 /* para el componente */
 @NgModule({
@@ -15,7 +16,8 @@ import { CopyrightComponent } from './copyright/copyright.component';
   declarations: [
     AppComponent,
     FechaactualComponent,
-    CopyrightComponent
+    CopyrightComponent,
+    ViewmodelComponent
   ],
 
   /* importaciones de angular */ 

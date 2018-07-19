@@ -39,9 +39,32 @@ ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
 
     *src *app : modulos y componentes de la aplicacion
 
- CREACION DE COMPONENTES DESDE CONSOLA
+    *src *models : clases/modelos de la aplicacion
+
+CREACION DE COMPONENTES DESDE CONSOLA
 
     ng generate component nombreComponente --spec false
 
+    ( o tambien )
+
+    ng g c nombreComponente --spec false
+
     ( con '--spec false' se especifica que no cree el archivo de testing )
+
+DATA BINDING ( ENLACE A DATOS )
+
+    Hay dos tipos de formas:
+
+    1. One Way Binding ( unidireccional )
+        a)  .ts --> .html 
+            ( de la fuente de datos a la vista )
+            ( interpolacion ( moustache : {{}} ) / property binding )
+
+        b)  .ts <-- .html
+            ( de la vista a la fuente de datos )
+            ( event binding )
+
+    2. Two way Biding ( bidireccional )
+        a)  .ts <--> .html
+            ( de la fuente de datos a la vista / de la vista a la fuente de datos )
     
