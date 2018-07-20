@@ -20,6 +20,7 @@ import { EjemplodirectivangstyleComponent } from './ejemplodirectivangstyle/ejem
 import { EjemplodirectivangnclassComponent } from './ejemplodirectivangnclass/ejemplodirectivangnclass.component';
 import { EjemplodirectivangnforComponent } from './ejemplodirectivangnfor/ejemplodirectivangnfor.component';
 import { EjemplodirectivangnforconobjetosComponent } from './ejemplodirectivangnforconobjetos/ejemplodirectivangnforconobjetos.component';
+import { EjemplodirectivangnSwitchComponent } from './ejemplodirectivangnswitch/ejemplodirectivangnswitch.component';
 
 /* para el componente */
 @NgModule({
@@ -39,7 +40,8 @@ import { EjemplodirectivangnforconobjetosComponent } from './ejemplodirectivangn
     EjemplodirectivangstyleComponent,
     EjemplodirectivangnclassComponent,
     EjemplodirectivangnforComponent,
-    EjemplodirectivangnforconobjetosComponent
+    EjemplodirectivangnforconobjetosComponent,
+    EjemplodirectivangnSwitchComponent
   ],
 
   /* importaciones de angular */ 

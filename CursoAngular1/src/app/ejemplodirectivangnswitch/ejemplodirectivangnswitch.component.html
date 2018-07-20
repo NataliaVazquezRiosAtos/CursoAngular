@@ -1,0 +1,29 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja">    
+
+    <h1 class="text-danger">COMPONENTE EJEMPLODIRECTIVANGSWICHT</h1>
+
+    <h3 class="text-success">GRUPOS MUSICALES</h3>
+  
+    <ul *ngFor="let grupomusical of gruposmusicales" [ngSwitch]="grupomusical.nombre">
+
+      <li *ngSwitchCase=" 'Ben Cock' " class="text-warning">
+        {{ grupomusical.nombre }} | {{ grupomusical.cancion }}
+      </li>
+      
+      <li *ngSwitchCase=" 'Lukke Li' " class="text-info">
+        {{ grupomusical.nombre }} | {{ grupomusical.cancion }}
+      </li> 
+
+      <li *ngSwitchCase=" 'Swedish House Mafia' " class="text-primary">
+        {{ grupomusical.nombre }} | {{ grupomusical.cancion }}
+      </li>   
+
+      <li *ngSwitchCase=" 'Lana del Rey' " class="text-success">
+        {{ grupomusical.nombre }} | {{ grupomusical.cancion }}
+      </li>  
+
+    </ul>
+
+  </div>
