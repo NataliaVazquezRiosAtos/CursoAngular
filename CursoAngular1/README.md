@@ -109,3 +109,9 @@ DIRECTIVAS
             3. Atributo: funcionan como un atributo en html.
 
     *   Podemos crrear nuestras propias directivas ( empaquetar un codigo que vayamos a utilizar mucho )e implementarlo en los diferentes componentes en los que vaya a intervenir.
+
+DIRECTIVAS PROPIAS
+
+    Desde consola:
+
+    ng generate directive nombreDeLaDirectiva

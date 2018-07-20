@@ -21,6 +21,8 @@ import { EjemplodirectivangnclassComponent } from './ejemplodirectivangnclass/ej
 import { EjemplodirectivangnforComponent } from './ejemplodirectivangnfor/ejemplodirectivangnfor.component';
 import { EjemplodirectivangnforconobjetosComponent } from './ejemplodirectivangnforconobjetos/ejemplodirectivangnforconobjetos.component';
 import { EjemplodirectivangnSwitchComponent } from './ejemplodirectivangnswitch/ejemplodirectivangnswitch.component';
+import { MenuitemDirective } from './menuitem.directive';
+import { MidirectivaComponent } from './midirectiva/midirectiva.component';
 
 /* para el componente */
 @NgModule({
@@ -41,7 +43,9 @@ import { EjemplodirectivangnSwitchComponent } from './ejemplodirectivangnswitch/
     EjemplodirectivangnclassComponent,
     EjemplodirectivangnforComponent,
     EjemplodirectivangnforconobjetosComponent,
-    EjemplodirectivangnSwitchComponent
+    EjemplodirectivangnSwitchComponent,
+    MenuitemDirective,
+    MidirectivaComponent
   ],
 
   /* importaciones de angular */ 
