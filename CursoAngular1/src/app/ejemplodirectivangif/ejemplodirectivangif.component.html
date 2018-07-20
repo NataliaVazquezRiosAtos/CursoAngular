@@ -14,6 +14,18 @@
     <!-- antes de una directiva hay que poner siempre * -->
     <!-- esta condicion if nos mostrara el boton si la variable nombre no es nula -->
 
-    <button type="submit" class="btn btn-primary" *ngIf="nombre">Enviar</button>   
+    <!-- para hacer un else se pone : else + id -->
+    <!-- id es la id de una etiqueta local de una etiqueta que incorpora angular que se llama ngtemplate -->
+    <!-- en este caso a la etiqueta le llamamos desactivado -->
+
+    <!-- la condicion else nos mostrara el boton desabilitado si la variable nombre es nula -->
+
+    <button type="submit" class="btn btn-primary" *ngIf="nombre else desactivado">Enviar</button>  
+    
+    <ng-template #desactivado>
+
+      <button type="submit" class="btn btn-primary" disabled>Enviar</button> 
+
+    </ng-template>
       
   </div>
