@@ -1,0 +1,25 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja cajaIfElseConMetodo"> 
+
+  <h1 class="text-danger">COMPONENTE EJEMPLOIFELSECONMETODO</h1>
+
+  <h3 class="text-success">¿ Cu&aacute;l es la capital de Espa&ntilde;a ?</h3>
+
+  <input type="text" class="form-control"  [(ngModel)]="capital">
+
+  <p class="text-success" *ngIf="!capital; else correcto">Complete la pregunta</p>  
+  
+  <ng-template #correcto>
+
+    <p class="text-success" *ngIf="getResultado() else incorrecto">¡Correcto!</p> 
+
+  </ng-template>
+
+  <ng-template #incorrecto>
+
+    <p class="text-success">¡Lo sentimos! Int&eacute;ntelo de nuevo.</p> 
+  
+  </ng-template>
+    
+</div>
