@@ -1,0 +1,39 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja">    
+
+    <h1 class="text-danger">COMPONENTE EJEMPLODIRECTIVAENFORCONOBJETOS</h1>
+
+    <h3 class="text-success">DATOS DE LOS ALUMNOS</h3>
+
+    <table class="table">
+
+      <thead>
+
+        <tr class="filters">
+
+            <th class="text-center">Id</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Apellidos</th>
+            <th class="text-center">Ciudad</th>
+  
+          </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let alumno of alumnos">
+
+          <td> {{ alumno.id }} </td>
+          <td> {{ alumno.nombre }} </td>
+          <td> {{ alumno.apellidos }} </td>
+          <td> {{ alumno.ciudad }} </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>   
+ 
+  </div>
