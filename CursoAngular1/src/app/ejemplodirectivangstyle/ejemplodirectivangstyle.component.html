@@ -1,0 +1,15 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja">    
+
+    <h1 class="text-danger">COMPONENTE EJEMPLODIRECTIVASTYLE</h1>
+
+    <input type="NUMBER" class="form-control"  [(ngModel)]="puntuacion">
+  
+    <h3 class="text-success">Puntuacion obtenida:&nbsp;</h3>
+
+    <!-- [ngStyle] : directiva de atributo , no modifica el DOM ,  sino que se utiliza como si fuese un atributo de html -->
+
+    <h3 [ngStyle]="{color: getColor()}"> {{puntuacion}} </h3>
+       
+  </div>

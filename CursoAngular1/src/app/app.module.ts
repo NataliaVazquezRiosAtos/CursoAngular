@@ -16,6 +16,7 @@ import { EjemploeventbindingComponent } from './ejemploeventbinding/ejemploevent
 import { Ejemplo2waybindingComponent } from './ejemplo2waybinding/ejemplo2waybinding.component';
 import { EjemplodirectivangifComponent } from './ejemplodirectivangif/ejemplodirectivangif.component';
 import { EjemploifelseconmetodoComponent } from './ejemploifelseconmetodo/ejemploifelseconmetodo.component';
+import { EjemplodirectivangstyleComponent } from './ejemplodirectivangstyle/ejemplodirectivangstyle.component';
 
 /* para el componente */
 @NgModule({
@@ -31,7 +32,8 @@ import { EjemploifelseconmetodoComponent } from './ejemploifelseconmetodo/ejempl
     EjemploeventbindingComponent,
     Ejemplo2waybindingComponent,
     EjemplodirectivangifComponent,
-    EjemploifelseconmetodoComponent
+    EjemploifelseconmetodoComponent,
+    EjemplodirectivangstyleComponent
   ],
 
   /* importaciones de angular */ 
