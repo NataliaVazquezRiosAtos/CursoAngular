@@ -18,6 +18,7 @@ import { EjemplodirectivangifComponent } from './ejemplodirectivangif/ejemplodir
 import { EjemploifelseconmetodoComponent } from './ejemploifelseconmetodo/ejemploifelseconmetodo.component';
 import { EjemplodirectivangstyleComponent } from './ejemplodirectivangstyle/ejemplodirectivangstyle.component';
 import { EjemplodirectivangnclassComponent } from './ejemplodirectivangnclass/ejemplodirectivangnclass.component';
+import { EjemplodirectivangnforComponent } from './ejemplodirectivangnfor/ejemplodirectivangnfor.component';
 
 /* para el componente */
 @NgModule({
@@ -35,7 +36,8 @@ import { EjemplodirectivangnclassComponent } from './ejemplodirectivangnclass/ej
     EjemplodirectivangifComponent,
     EjemploifelseconmetodoComponent,
     EjemplodirectivangstyleComponent,
-    EjemplodirectivangnclassComponent
+    EjemplodirectivangnclassComponent,
+    EjemplodirectivangnforComponent
   ],
 
   /* importaciones de angular */ 

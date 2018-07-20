@@ -9,9 +9,11 @@
     <input type="number" class="form-control"  [(ngModel)]="puntuacion">
   
     <div  *ngIf="puntuacion">
-    <h3 [ngClass]=" {aprobado: puntuacion >=5 , suspenso: puntuacion <5}"> Puntuacion obtenida: {{puntuacion}}</h3>
-  </div>
-    <!-- [ngStyle] : directiva de atributo , no modifica el DOM ,  sino que se utiliza como si fuese un atributo de html -->
 
+      <!-- [ngClass] : directiva de atributo , no modifica el DOM ,  sino que se utiliza como si fuese un atributo de html -->
+
+      <h3 [ngClass]=" {aprobado: puntuacion >=5 , suspenso: puntuacion <5}"> Puntuacion obtenida: {{puntuacion}}</h3>
+    
+    </div>    
  
   </div>
