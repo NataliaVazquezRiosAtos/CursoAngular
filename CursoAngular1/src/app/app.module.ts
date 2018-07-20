@@ -17,6 +17,7 @@ import { Ejemplo2waybindingComponent } from './ejemplo2waybinding/ejemplo2waybin
 import { EjemplodirectivangifComponent } from './ejemplodirectivangif/ejemplodirectivangif.component';
 import { EjemploifelseconmetodoComponent } from './ejemploifelseconmetodo/ejemploifelseconmetodo.component';
 import { EjemplodirectivangstyleComponent } from './ejemplodirectivangstyle/ejemplodirectivangstyle.component';
+import { EjemplodirectivangnclassComponent } from './ejemplodirectivangnclass/ejemplodirectivangnclass.component';
 
 /* para el componente */
 @NgModule({
@@ -33,7 +34,8 @@ import { EjemplodirectivangstyleComponent } from './ejemplodirectivangstyle/ejem
     Ejemplo2waybindingComponent,
     EjemplodirectivangifComponent,
     EjemploifelseconmetodoComponent,
-    EjemplodirectivangstyleComponent
+    EjemplodirectivangstyleComponent,
+    EjemplodirectivangnclassComponent
   ],
 
   /* importaciones de angular */ 

@@ -1,0 +1,15 @@
+/* estilos propios del componente */ 
+
+.aprobado,
+.suspenso{
+    color: #fff;
+    padding: 10px;
+}
+
+.aprobado{  
+    background-color: green;
+}
+
+.suspenso{ 
+    background-color: red;   
+}
