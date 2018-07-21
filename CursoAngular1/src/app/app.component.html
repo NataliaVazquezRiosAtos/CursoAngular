@@ -8,10 +8,14 @@
 
     <h1 class="text-danger">COMPONENTE APP</h1>
 
-    <!-- {{ title }} ,  {{ destino }}: renderiza los valores que tienen las variables del componente  -->
-    <h2 class="text-success">Bienvenid@  {{ title }}!</h2>
+    <!-- {{ nombre }} ,  {{ destino }}: renderiza los valores que tienen las variables del componente  -->
+    <!-- PIPE i18nSelect : nos muestra bienvenia o bienvenido en funcion del atributo sexo y encabezamiento -->
+    
+    <h2 class="text-success">{{ sexo | i18nSelect : encabezamiento }} {{ nombre }}!</h2>
     <h2 class="text-success">Tu destino es : {{ destino }}</h2>
     
+     <!-- PIPE UPPERCASE Y LOWERCASE : -->
+     
     <h1 class="text-danger">PIPE UPPERCASE / LOVERCASE</h1>
     <h2 class="text-success">UPPERCASE : {{ destino | uppercase }}</h2>
     <h2 class="text-success">LOVERCASE : {{ destino | lowercase }}</h2>   

@@ -21,8 +21,14 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  /* se crean variables para despues usarlas en la plantilla */
-  title = 'Naty';
+  // ATRIBUTOS
+  nombre : string = 'Naty';
   destino: string = 'Madrid';
+
+  // PARA PIPE i18nSelect
+  sexo : string  = "mujer";
+  encabezamiento : any = { "mujer" : "Bienbenida" , "hombre" : "Bienbenido"};
+
+ 
 
 }
