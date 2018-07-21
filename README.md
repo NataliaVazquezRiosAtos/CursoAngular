@@ -1,16 +1,21 @@
+
 # Curso Angular
+
 
 INSTALACIONES PREVIAS
 
-    1. Instalación de Node y NPM :
+
+    1.  Instalación de Node y NPM :
 
         https://nodejs.org/es/
 
-    2. Instalación de TypeScript ( desde consola ) :
+
+    2.  Instalación de TypeScript ( desde consola ) :
 
         npm install -g typescript
 
-    3. Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
+
+    3.  Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
 
         node -v
 
@@ -18,20 +23,24 @@ INSTALACIONES PREVIAS
 
         tsc -v
 
-    4. Instalación de VisualStudio :
+
+    4.  Instalación de VisualStudio :
 
         https://code.visualstudio.com/
 
-    5. Instalación de Angular/cli ( desde consola ) :
+
+    5.  Instalación de Angular/cli ( desde consola ) :
 
         npm install -g @angular/cli
+
+
 
 PRIMER PROYECTO ANGULAR
 
 
     1. Para crear un nuevo proyecto ( desde consola ):
 
-        ng new nombreProyecto
+       ng new nombreProyecto
 
 
     2. Para arrancar la aplicación ( desde consola y dentro del directorio del proyecto creado ) :
@@ -49,15 +58,19 @@ PRIMER PROYECTO ANGULAR
         ng serve --port 3000 ( en el navegador ponemos : localhost:3000 )   
 
 
-ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
 
-    *src *assets : archivos estaticos de la aplicacion ( principalmente imagenes )
+ESTRUCTURA GENERAL DE UNA APLICACIÓN ANGULAR
 
-    *src *app : modulos y componentes de la aplicacion
 
-    *src *models : clases/modelos de la aplicacion
+    *src *assets : archivos estaticos de la aplicacion ( principalmente imágenes )
 
-CREACION DE COMPONENTES ( DESDE CONSOLA ) 
+    *src *app : modulos y componentes de la aplicación
+
+    *src *models : clases/modelos de la aplicación
+
+
+CREACIÓN DE COMPONENTES ( DESDE CONSOLA ) 
+
 
     ng generate component nombreComponente --spec false
 
@@ -67,91 +80,126 @@ CREACION DE COMPONENTES ( DESDE CONSOLA )
 
     ( con '--spec false' se especifica que no cree el archivo de testing )
 
+
 DATA BINDING ( ENLACE A DATOS )
+
 
     Hay dos tipos de formas:
 
-    1. One Way Binding ( unidireccional )
+        1. One Way Binding ( unidireccional )
 
-        a)  .ts --> .html 
+            a)  .ts --> .html 
 
-            ( de la fuente de datos a la vista )
+                ( de la fuente de datos a la vista )
 
-            ( interpolacion ( moustache : {{}} ) / property binding )
-
-
-        b)  .ts <-- .html
-
-            ( de la vista a la fuente de datos )
-
-            ( event binding )
+                ( interpolacion ( moustache : {{}} ) / property binding )
 
 
-    2. Two way Biding ( bidireccional )
+            b)  .ts <-- .html
 
-        a)  .ts <--> .html
+                ( de la vista a la fuente de datos )
 
-            ( de la fuente de datos a la vista / de la vista a la fuente de datos )
+                ( event binding )
+
+
+        2. Two way Biding ( bidireccional )
+
+            a)  .ts <--> .html
+
+                ( de la fuente de datos a la vista / de la vista a la fuente de datos )
+
 
 DIRECTIVAS
 
-    *   Las directivas son clases de Angular con codigo para crear, formatear e interaccionar
 
-        con los elementos HTML en el DOM de las paginas o sitios web.
+    *   Las directivas son clases de Angular con código para crear, formatear e interaccionar
+
+        con los elementos HTML en el DOM de las páginas o sitios web.
 
 
-    *   Hay tres tipos de directivas:
+    Hay tres tipos de directivas:
 
-            1. Componentes: 
+        1. Componentes 
 
-            2. Estructurales: son los que alteran los loyouts del elemento html en el que las
+        2. Estructurales: son los que alteran los loyouts del elemento html en el que las
 
-               introducimos.
+           introducimos.
 
-            3. Atributo: funcionan como un atributo en html.
+        3. Atributo: funcionan como un atributo en html.
 
-    *   Podemos crrear nuestras propias directivas ( empaquetar un codigo que vayamos a utilizar mucho )
+
+    Podemos crrear nuestras propias directivas ( empaquetar un código que vayamos a utilizar mucho )
     
-        e implementarlo en los diferentes componentes en los que vaya a intervenir.
+    e implementarlo en los diferentes componentes en los que vaya a intervenir.
+
 
 DIRECTIVAS PROPIAS
 
+
     Desde consola:
 
-    ng generate directive nombreDeLaDirectiva
+        ng generate directive nombreDeLaDirectiva
+
 
 PIPE
 
-    *   Los pipes se emplean para dar un formato de salida a los valores que empleamos en 
-    
-        nuestra aplicación ( formatos de los datos de salida ).
 
-    *   Para hacer un pipe propio ( desde consola ) : 
+    Los 'Pipes' se emplean para dar un formato de salida a los valores que empleamos en 
+    
+    nuestra aplicación ( formatos de los datos de salida ).
+
+
+    Para hacer un pipe propio ( desde consola ) : 
 
         ng generate pipe nombredelPipe
 
+
 SERVICIOS
 
-    *   Los sercicios son elementos de angular que nos permiten centralizar el uso de codigo 
 
-        para luego usarlo en cada componente que necesitemos, mediante la inyeccion de 
+    Los 'Servicios' son elementos de Angular que nos permiten centralizar el uso de código 
 
-        dependencias.
+    para luego usarlo en cada componente que necesitemos, mediante la inyección de 
 
-    *   Como se suelen usar para gestionar datos e inyectarlos en los componentes, tambien
+    dependencias.
 
-        se les conoce como 'providers' ( 'providers', tambien es el nombre del array en el
+
+    Como se suelen usar para gestionar datos e inyectarlos en los componentes, también
+
+    se les conoce como 'providers' ( 'providers', tambien es el nombre del array en el
         
-        que se implementan, en el archivo raiz del modulo )
+    que se implementan, en el archivo raÍz del módulo )
 
-    *   Para crear un servicio ( desde consola ) :
 
-            ng generate service nombreCarpetaSercicios/nombreServicio --spec false
+    Para crear un servicio ( desde consola ) :
 
-            NOTA :  Al ejecutar la anterior sentencia desde consola, no modifica
+        ng generate service nombreCarpetaSercicios/nombreServicio --spec false
 
-                    de modo automatico el archivo 'app.moule.ts' , por lo que la 
+        NOTA :  Al ejecutar la anterior sentencia desde consola, no modifica
 
-                    importacion hay que hacerla de modo manual, y no olvidarse de 
+                de modo automático el archivo 'app.moule.ts' , por lo que la 
+
+                importación hay que hacerla de modo manual, y no olvidarse de 
                     
-                    meter el servicio creado en el array de 'providers'.
+                meter el servicio creado en el array de 'providers'.
+
+
+IMPLEMENTACIÓN DE ROUTING
+
+
+    Las aplicaciones Angular están diseñadas para ser 'Single Page Application', lo que hace
+
+    que las respuestas a las acciones sea siempre muy rápida.
+
+
+    No tenemos todos los componentes de una aplicación en la misma páginaporque sino eso haría que
+
+    fuera una aplicación muy compleja y difícil de usar por el usuario cuando tengamos muchos
+
+    componentes. Para solventar este problema, tenemos el 'Routing'.
+
+
+    El 'Routing', con la ayuda de la barra de navegación del navegador, establecen las urls que lo 
+
+    que harán será cargar cada componente dinámicamente.
+
