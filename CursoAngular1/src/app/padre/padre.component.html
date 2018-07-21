@@ -1,0 +1,21 @@
+<!-- es la plantilla del componente : lo que queremos que se nos vea en nuestro componente -->
+
+<div class="caja"> 
+
+    <h1 class="text-danger">EJEMPLO DE @Input</h1>
+
+    <h2 class="text-success">COMPONENTE PADRE</h2>
+    
+    <div class="padre">
+
+      <!-- ejemplo con atributo -->
+
+      <app-hijo [textoHijo]="textoPadre" ></app-hijo>
+
+      <!-- ejemplo con array -->
+
+      <app-hijo *ngFor="let aviso of avisos" [textoHijo]="aviso" ></app-hijo>
+
+    </div>     
+      
+</div> 

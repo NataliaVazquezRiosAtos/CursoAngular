@@ -1,0 +1,6 @@
+/* estilos propios del componente */ 
+
+.padre{
+    border: 2px solid #ddd;
+    padding: 1em;
+}
