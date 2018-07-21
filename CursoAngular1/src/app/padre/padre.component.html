@@ -2,7 +2,7 @@
 
 <div class="caja"> 
 
-    <h1 class="text-danger">EJEMPLO DE @Input</h1>
+    <h1 class="text-danger">EJEMPLO DE @Input Y @Output</h1>
 
     <h2 class="text-success">COMPONENTE PADRE</h2>
     
@@ -14,8 +14,10 @@
 
       <!-- ejemplo con array -->
 
-      <app-hijo *ngFor="let aviso of avisos" [textoHijo]="aviso" ></app-hijo>
+      <app-hijo *ngFor="let aviso of avisos" [textoHijo]="aviso" (mensajeMarcado)= "mostrarMensaje($event)"></app-hijo>
 
+      <h3 class="text-warning">{{ texto }}</h3>
+      
     </div>     
       
 </div> 

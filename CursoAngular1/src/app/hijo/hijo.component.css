@@ -4,3 +4,9 @@
     border: 1px solid #ddd;
     padding: 1em;
 }
+
+/*para hacer tachado en el texto */
+
+.tachado{
+    text-decoration: line-through;
+}
