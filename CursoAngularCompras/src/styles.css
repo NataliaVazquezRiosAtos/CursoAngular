@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* estilos comunes a todos los componentes de la aplicacion */
+
+/* tipografia para todos los elementos de la aplicacion */
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* estilos para .container  */
+
+.container{
+
+    width: 100%;
+    padding: 2em;
+    margin: 0;    
+}
+
+/*estilos para los titulos */
+
+h3{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 2em;
+}
+
+/* estilos para la tabla */
+
+.table{
+    background-color: #fff;
+    margin-bottom: 4em;
+}
+
+tr th {
+    color: #fff;
+}
+

@@ -13,7 +13,6 @@ import { ProveedoresComponent } from './proveedores/proveedores/proveedores.comp
   declarations: [
     AppComponent,
     ProveedoresComponent
-
   ],
 
   imports: [

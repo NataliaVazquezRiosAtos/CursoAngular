@@ -12,7 +12,9 @@ export class ProveedoresComponent implements OnInit {
 
   // ATRIBUTOS
 
-  mensaje : string ;
+  proveedores : any
+
+  // mensaje : string ;
 
   // para que al iniciar el componente nos cargue el servicio , le pasamos al contructor un
   // objeto servicio
@@ -24,7 +26,9 @@ export class ProveedoresComponent implements OnInit {
   // este componente llevara a cabo el codigo que escribamos dentro
   ngOnInit() {
 
-    this.mensaje = this.proveedoresServicio.getProveedores();
+    this.proveedores = this.proveedoresServicio.getProveedores();
+
+    // this.mensaje = this.proveedoresServicio.getProveedores();
     
   }
 
