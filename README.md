@@ -1,52 +1,52 @@
-# CursoAngular1
+# Curso Angular
 
 INSTALACIONES PREVIAS
 
-1. Instalación de Node y NPM :
+    1. Instalación de Node y NPM :
 
-    https://nodejs.org/es/
+        https://nodejs.org/es/
 
-2. Instalación de TypeScript ( desde consola ) :
+    2. Instalación de TypeScript ( desde consola ) :
 
-    npm install -g typescript
+        npm install -g typescript
 
-3. Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
+    3. Comprobar instalación y versión desde consola de los puntos 1 y 2 ( desde consola ):
 
-    node -v
+        node -v
 
-    npm -v
+        npm -v
 
-    tsc -v
+        tsc -v
 
-4. Instalación de VisualStudio :
+    4. Instalación de VisualStudio :
 
-    https://code.visualstudio.com/
+        https://code.visualstudio.com/
 
-5. Instalación de Angular/cli ( desde consola ) :
+    5. Instalación de Angular/cli ( desde consola ) :
 
-    npm install -g @angular/cli
+        npm install -g @angular/cli
 
 PRIMER PROYECTO ANGULAR
 
 
-1. Para crear un nuevo proyecto ( desde consola ):
+    1. Para crear un nuevo proyecto ( desde consola ):
 
-    ng new nombreProyecto
-
-
-2. Para arrancar la aplicación ( desde consola y dentro del directorio del proyecto creado ) :
-
-    ng serve  ( en el navegador ponemos : localhost:4200 )   
+        ng new nombreProyecto
 
 
-3. Para parar el servdor ( desde consola ): 
+    2. Para arrancar la aplicación ( desde consola y dentro del directorio del proyecto creado ) :
 
-    ctrl + c
+        ng serve  ( en el navegador ponemos : localhost:4200 )   
 
 
-4. Si queremos cambiar el puerto: 
+    3. Para parar el servdor ( desde consola ): 
 
-    ng serve --port 3000 ( en el navegador ponemos : localhost:3000 )   
+        ctrl + c
+
+
+    4. Si queremos cambiar el puerto: 
+
+        ng serve --port 3000 ( en el navegador ponemos : localhost:3000 )   
 
 
 ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
@@ -57,7 +57,7 @@ ESTRUCTURA GENERAL DE UNA APLICACION ANGULAR
 
     *src *models : clases/modelos de la aplicacion
 
-CREACION DE COMPONENTES DESDE CONSOLA
+CREACION DE COMPONENTES ( DESDE CONSOLA ) 
 
     ng generate component nombreComponente --spec false
 
