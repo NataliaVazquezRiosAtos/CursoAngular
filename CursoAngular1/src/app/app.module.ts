@@ -25,6 +25,7 @@ import { MenuitemDirective } from './menuitem.directive';
 import { MidirectivaComponent } from './midirectiva/midirectiva.component';
 import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
+import { EuroPipe } from './euro.pipe';
 
 /* para el componente */
 @NgModule({
@@ -49,7 +50,8 @@ import { HijoComponent } from './hijo/hijo.component';
     MenuitemDirective,
     MidirectivaComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    EuroPipe
   ],
 
   /* importaciones de angular */ 

@@ -122,6 +122,10 @@ DIRECTIVAS PROPIAS
 
 PIPE
 
-    Los pipes se emplean para dar un formato de salida a los valores que empleamos en 
+    *   Los pipes se emplean para dar un formato de salida a los valores que empleamos en 
     
-    nuestra aplicación ( formatos de los datos de salida ).
+        nuestra aplicación ( formatos de los datos de salida ).
+
+    *   Para hacer un pipe propio ( desde consola ) : 
+
+        ng generate pipe nombredelPipe
