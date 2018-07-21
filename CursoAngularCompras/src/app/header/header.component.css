@@ -1,0 +1,31 @@
+
+/* estilos para la barra de navegacion */
+
+.navbar-brand,
+.nav-link,
+.navbar-toggler-icon{
+
+    color : #fff;
+}
+
+.navbar-brand:hover,
+.nav-link:hover,
+.navbar-toggler-icon:hover,
+
+.navbar-brand:active,
+.nav-link:active,
+.navbar-toggler-icon:active,
+
+.navbar-brand:focus,
+.nav-link:focus,
+.navbar-toggler-icon:focus{
+
+    color : #ddd;   
+
+}
+
+.nav-item.active{
+    
+    border-bottom: 2px solid #fff;
+  
+}

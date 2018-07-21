@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ProveedoresService } from './servicios/proveedores.service';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { HeaderComponent } from './header/header.component';
 
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
 
@@ -36,7 +37,8 @@ const rutas : Routes  = [
   declarations: [
     AppComponent,
     ProveedoresComponent,
-    InicioComponent
+    InicioComponent,
+    HeaderComponent
   ],
 
   imports: [
