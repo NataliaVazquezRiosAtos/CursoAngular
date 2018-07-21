@@ -19,18 +19,24 @@ import { Component } from '@angular/core';
   // si borrara el archivo de la plantilla 'fechaactual.component.html' y funciona igual
 
   template:`
-  
-    <div class=" caja cajaFechaActual text-center"> 
 
-      <h1 class="text-danger">COMPONENTES ANIDADOS : FECHAACTUAL + COPYRIGHT </h1>
-        
-      <!-- {{ hoy }}: renderiza el valor que tiene la variable en el  componente  -->     
-      <!-- date: 'd/M/y H:h' : formatea la fecha :  dia , mes , año , hora y minuto  --> 
-      <h2 class="text-success">Fecha actual : {{ hoy | date: 'd/M/y H:h'}}</h2>
-     
-      <app-copyright></app-copyright>  
-        
-    </div> 
+  <div class=" caja  text-center"> 
+
+    <h1 class="text-danger">COMPONENTE FECHAACTUAL</h1>
+          
+    <!-- {{ hoy }}: renderiza el valor que tiene la variable en el  componente  -->     
+    <!-- date: 'd/M/y H:h' : formatea la fecha :  dia , mes , año , hora y minuto  --> 
+    <h2 class="text-success">Fecha actual : {{ hoy | date: 'd/M/y H:m'}}</h2> 
+    
+    <!-- pipe date -->
+    <!-- 'Z' marca la zona horaria -->
+    <h1 class="text-danger">Ejemplo de Pipe Date</h1>
+
+    <h2 class="text-success">Fecha actual : {{ hoy | date: 'd-M-y'}}  a las {{ hoy | date: 'H:m Z'}} </h2> 
+          
+    <app-copyright></app-copyright>  
+
+  </div> 
   
   `,
 

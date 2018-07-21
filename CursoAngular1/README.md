@@ -104,14 +104,24 @@ DIRECTIVAS
 
             1. Componentes: 
 
-            2. Estructurales: son los que alteran los loyouts del elemento html en el que las           introducimos.
+            2. Estructurales: son los que alteran los loyouts del elemento html en el que las
+
+               introducimos.
 
             3. Atributo: funcionan como un atributo en html.
 
-    *   Podemos crrear nuestras propias directivas ( empaquetar un codigo que vayamos a utilizar mucho )e implementarlo en los diferentes componentes en los que vaya a intervenir.
+    *   Podemos crrear nuestras propias directivas ( empaquetar un codigo que vayamos a utilizar mucho )
+    
+        e implementarlo en los diferentes componentes en los que vaya a intervenir.
 
 DIRECTIVAS PROPIAS
 
     Desde consola:
 
     ng generate directive nombreDeLaDirectiva
+
+PIPE
+
+    Los pipes se emplean para dar un formato de salida a los valores que empleamos en 
+    
+    nuestra aplicación ( formatos de los datos de salida ).
