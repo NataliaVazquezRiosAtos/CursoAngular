@@ -3,14 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// importamos el servicio
+import { ProveedoresService } from './servicios/proveedores.service';
+import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
+
+
 @NgModule({
+
   declarations: [
-    AppComponent
+    AppComponent,
+    ProveedoresComponent
+
   ],
+
   imports: [
     BrowserModule
   ],
-  providers: [],
+
+  // se mete  el servicio dentro del array
+  providers: [ProveedoresService],
+
   bootstrap: [AppComponent]
+
 })
+
 export class AppModule { }

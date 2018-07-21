@@ -129,3 +129,29 @@ PIPE
     *   Para hacer un pipe propio ( desde consola ) : 
 
         ng generate pipe nombredelPipe
+
+SERVICIOS
+
+    *   Los sercicios son elementos de angular que nos permiten centralizar el uso de codigo 
+
+        para luego usarlo en cada componente que necesitemos, mediante la inyeccion de 
+
+        dependencias.
+
+    *   Como se suelen usar para gestionar datos e inyectarlos en los componentes, tambien
+
+        se les conoce como 'providers' ( 'providers', tambien es el nombre del array en el
+        
+        que se implementan, en el archivo raiz del modulo )
+
+    *   Para crear un servicio ( desde consola ) :
+
+            ng generate service nombreCarpetaSercicios/nombreServicio --spec false
+
+            NOTA :  Al ejecutar la anterior sentencia desde consola, no modifica
+
+                    de modo automatico el archivo 'app.moule.ts' , por lo que la 
+
+                    importacion hay que hacerla de modo manual, y no olvidarse de 
+                    
+                    meter el servicio creado en el array de 'providers'.
