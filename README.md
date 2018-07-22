@@ -203,3 +203,13 @@ IMPLEMENTACIÓN DE ROUTING
 
     que harán será cargar cada componente dinámicamente.
 
+
+FORMULARIOS
+
+
+    Existen dos técnicas para crear formularios en Angular:
+
+        1.  Template Driven : realiza la lógica de captura de datos y la validación de los mismos del lado html.
+
+        2.  Reactive : gestiona el formulario desde el archivo .ts
+

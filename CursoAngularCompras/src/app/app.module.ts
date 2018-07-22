@@ -11,20 +11,29 @@ import { ProveedoresService } from './servicios/proveedores.service';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
+import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
 
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
 
 const rutas : Routes  = [
 
+  // RUTAS
   // path : ruta
   // component : componente al que llama
 
+  // RUTA INICIO
   // la ruta '' llama al componente inicio
   { path : '' , component : InicioComponent } ,
 
+  // RUTA PROVEEDORES ( LISTADO )
   // la ruta 'proveedores' llama al componente proveedores
   { path : 'proveedores' , component : ProveedoresComponent } , 
 
+  // RUTA PROVEEDORES ( FORMULARIO )
+  // la ruta 'proveedores' llama al componente proveedores
+  { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent} , 
+
+  // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
   // la ruta '**' llama al componente inicio
   { path : '**' , component : InicioComponent }
@@ -38,7 +47,8 @@ const rutas : Routes  = [
     AppComponent,
     ProveedoresComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddProveedoresComponent
   ],
 
   imports: [

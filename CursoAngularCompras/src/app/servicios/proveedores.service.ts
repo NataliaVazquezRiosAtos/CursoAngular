@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
