@@ -4,60 +4,78 @@
 
       <h2 class="text-success text-center">Añadir nuevo proveedor</h2>
 
-      <form class="row">
+      <!-- (ngSubmit)="enviarFormulario()"  : cuando se envie el formulario se ejecuta la funcion enviarFormulario() -->
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Nombre</label>
-            <input  type="text"  class="form-control"  id="nombre"  name="nombre"  ngModel>
-          </div>
+      <!-- #formProveedores : id del objeto formulario -->
+      <!-- el objeto que se crea en el formulario ( procesado por ngForm )-->
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>C.I.F.</label>
-            <input  type="text"  class="form-control"  id="cif"  name="cif"  ngModel>
-          </div>
+      <!-- los campos ( inputs ) del formulario, tienen que ser identificados como atributos del objeto formulario -->
+      <!-- para ello, se añade a todos los inputs del formulario 'ngModel' y tamnien un name -->
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Dirección</label>
-            <input  type="text"  class="form-control"  id="direccion"  name="direccion"  ngModel>
-          </div>
+      <form class="row" (ngSubmit)="enviarFormularioProveedores()" #formProveedores="ngForm">
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Código Postal</label>
-            <input  type="text"  class="form-control"  id="cp"  name="cp" ngModel>
-          </div>
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Nombre</label>
+          <input  type="text"  class="form-control"  id="nombre"  name="nombre"  ngModel>
+        </div>
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Localidad</label>
-            <input  type="text"  class="form-control"  id="localidad"   name="localidad"  ngModel>
-          </div>
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>C.I.F.</label>
+          <input  type="text"  class="form-control"  id="cif"  name="cif"  ngModel>
+        </div>
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Provincia</label>
-            <input type="text"  class="form-control"  id="provincia"  name="provincia"  ngModel>
-          </div>       
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">       
+          <label>Dirección</label>
+          <input  type="text"  class="form-control"  id="direccion"  name="direccion"  ngModel>
+        </div>
+
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Código Postal</label>
+          <input  type="text"  class="form-control"  id="cp"  name="cp" ngModel>
+        </div>
+
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Localidad</label>
+          <input  type="text"  class="form-control"  id="localidad"   name="localidad"  ngModel>
+        </div>
+
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Provincia</label>
+          <input type="text"  class="form-control"  id="provincia"  name="provincia"  ngModel>
+        </div>       
         
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Teléfono</label>
-            <input type="number"  class="form-control"  id="telefono"  name="telefono"  ngModel>
-          </div>
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Teléfono</label>
+          <input type="number"  class="form-control"  id="telefono"  name="telefono"  ngModel>
+        </div>
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Correo Electrónico</label>
-            <input type="text" class="form-control"  id="email"  name="email"   ngModel>
-          </div>
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Correo Electrónico</label>
+          <input type="text" class="form-control"  id="email"  name="email"   ngModel>
+        </div>
 
-          <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-            <label>Persona de contacto</label>
-            <input type="text"  class="form-control"  id="contacto"  name="contacto"  ngModel>
-          </div>
+        <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <label>Persona de contacto</label>
+          <input type="text"  class="form-control"  id="contacto"  name="contacto"  ngModel>
+        </div>
 
-          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <button type="submit" class="btn btn-success">
-              Añadir Proveedor
-            </button>
-          </div>
+        <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <button type="submit" class="btn btn-success">
+            Añadir Proveedor
+          </button>
+        </div>
 
-       </form>
+      </form>
+
+      <!-- comprobamos que nos añade el objeto al enviar el formulario -->
+
+      <hr>
+
+      <pre>
+        {{ proveedor | json }}
+      </pre>
+
+      <hr>
 
     </div> 
 

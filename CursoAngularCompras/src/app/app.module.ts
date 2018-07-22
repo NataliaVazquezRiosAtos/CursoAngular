@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 // se importan los paquetes de routing
 import { Routes , RouterModule } from '@angular/router';
@@ -59,7 +60,8 @@ const rutas : Routes  = [
     // se establece un array de rutas que va a emplear nuestra aplicacion para cargar en la pagina
     // diferentes componentes
 
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(rutas),
+    FormsModule
     
   ],
 
