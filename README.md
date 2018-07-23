@@ -252,6 +252,13 @@ FORMULARIOS
             }
 
 
+    Validaciones programáticas
+
+        Son las validaciones que se hacen del lado del componente ( .ts ) en vez de usar html y se usan en 
+        
+        los 'formularios reactive'.
+
+
 
 
 

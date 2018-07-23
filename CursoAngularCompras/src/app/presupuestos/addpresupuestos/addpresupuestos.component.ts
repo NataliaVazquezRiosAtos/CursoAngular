@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup , FormBuilder } from '@angular/forms';
+import { Component , OnInit } from '@angular/core';
+import { FormControl , FormGroup , FormBuilder , Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addpresupuestos',
@@ -22,12 +22,13 @@ export class AddpresupuestosComponent implements OnInit {
 
     // 'group()' metodo para almacenar/asociar los diferentes campos
     this.presupuestoForm= this.pf.group({
-      proveedor: '',
-      fecha: '',
-      concepto: '',
-      baseimponible: '',
-      tipoiva: '',
-      total: '',
+      // para las validaciones
+      proveedor: [ '' , [ Validators.required ] ] ,
+      fecha: [ '' , [ Validators.required ] ] ,
+      concepto: [ '' , [ Validators.required , Validators.minLength(10) ] ],
+      baseimponible: [ '' , [ Validators.required ] ] ,
+      tipoiva: [ '' , [ Validators.required ] ] ,
+      total: [ '' , [ Validators.required ] ] ,
     });
 
   }
