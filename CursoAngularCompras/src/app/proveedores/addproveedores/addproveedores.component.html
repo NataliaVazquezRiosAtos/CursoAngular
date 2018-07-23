@@ -43,7 +43,7 @@
           <label>Provincia</label>
           <select  class="form-control"  id="provincia"  name="provincia"  ngModel>
             <option  value="">-- Provincia --</option>
-            <option  *ngFor="let provincia of provincias"  value="provincia"> {{ provincia }}</option>
+            <option  *ngFor="let provincia of provincias"  [value]="provincia"> {{ provincia }}</option>
           </select>
         </div>       
         
