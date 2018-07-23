@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+// importaciones para formularios
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 // se importan los paquetes de routing
@@ -13,6 +16,7 @@ import { ProveedoresComponent } from './proveedores/proveedores/proveedores.comp
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
 import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
+import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpresupuestos.component';
 
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
 
@@ -34,6 +38,10 @@ const rutas : Routes  = [
   // la ruta 'proveedores' llama al componente proveedores
   { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent} , 
 
+  // RUTA PROVEEDORES ( FORMULARIO )
+  // la ruta 'proveedores' llama al componente proveedores
+  { path : 'addpresupuestos' , component :  AddpresupuestosComponent} , 
+
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
   // la ruta '**' llama al componente inicio
@@ -49,7 +57,9 @@ const rutas : Routes  = [
     ProveedoresComponent,
     InicioComponent,
     HeaderComponent,
-    AddProveedoresComponent
+    AddProveedoresComponent,
+    AddpresupuestosComponent
+   
   ],
 
   imports: [
@@ -61,7 +71,8 @@ const rutas : Routes  = [
     // diferentes componentes
 
     RouterModule.forRoot(rutas),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
 
