@@ -41,7 +41,10 @@
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Provincia</label>
-          <input type="text"  class="form-control"  id="provincia"  name="provincia"  ngModel>
+          <select  class="form-control"  id="provincia"  name="provincia"  ngModel>
+            <option  value="">-- Provincia --</option>
+            <option  *ngFor="let provincia of provincias"  value="provincia"> {{ provincia }}</option>
+          </select>
         </div>       
         
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
