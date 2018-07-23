@@ -52,10 +52,23 @@
           <input type="number"  class="form-control"  id="telefono"  name="telefono"  ngModel>
         </div>
 
+
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
           <label>Correo Electrónico</label>
-          <input type="text" class="form-control"  id="email"  name="email"  ngModel  requiered email>
+
+          <!-- mensaje de validacion correcta -->
+          <i class="fa fa-check-circle check" *ngIf="email.valid" > </i>
+
+          <!-- mensaje de validacion incorrecta -->
+          <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched" ></i>
+
+          <input type="text" class="form-control"  id="email"  name="email" ngModel required email  #email="ngModel">
+
+          <p class="alert alert-danger" *ngIf="email.invalid && email.touched" >Introduzca un email v&aacute;lido.</p>
+        
         </div>
+
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Persona de contacto</label>
@@ -63,9 +76,13 @@
         </div>
 
         <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <button type="submit" class="btn btn-success">
+
+          <!-- muestro el boton de envio de formmulario desabilitado si no está totalmente completo -->
+          <!-- lo mostrara habilitado cuando tenga los campos rellenos -->
+          <button type="submit" class="btn btn-success" [disabled]="!formProveedores.valid">
             Añadir Proveedor
           </button>
+
         </div>
 
       </form>

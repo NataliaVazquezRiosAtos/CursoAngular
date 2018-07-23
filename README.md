@@ -241,7 +241,17 @@ FORMULARIOS
         
         Angular tiene unas clases CSS para cada estado que nos permiten configurar las ayudas al usuario a la 
 
-        hora de completar formularios.
+        hora de completar formularios. Por ejemplo, podríamos poner:
+
+            input.ng-invalid.ng-touched {
+                border-left: 5px solid #a94442;
+            }
+
+            input.ng-valid.ng-touched {
+                border-left: 5px solid #42A948;
+            }
+
+
 
 
 
