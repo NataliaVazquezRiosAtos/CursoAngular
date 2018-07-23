@@ -54,7 +54,7 @@
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Correo Electrónico</label>
-          <input type="text" class="form-control"  id="email"  name="email"   ngModel>
+          <input type="text" class="form-control"  id="email"  name="email"  ngModel  requiered email>
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -77,6 +77,14 @@
       <pre>
         {{ proveedor | json }}
       </pre>
+
+      <hr>
+
+      <h4> El estado dirty: {{ formProveedores.controls.email.dirty }} </h4>
+      <h4> El estado pristine: {{ formProveedores.controls.email.pristine }} </h4>
+      <h4> El estado touched: {{ formProveedores.controls.email.touched }} </h4>
+      <h4> El estado valid: {{ formProveedores.controls.email.valid }} </h4>
+      <h4> El estado invalid: {{ formProveedores.controls.email.invalid }} </h4>
 
       <hr>
 

@@ -213,3 +213,36 @@ FORMULARIOS
 
         2.  Reactive : gestiona el formulario desde el archivo .ts
 
+    
+    Validaciones:
+
+        Por defecto Angular elimina va validación HTML5.
+
+
+        'NgForm' tiene su propio sistema de validación: aprovecha los atributos de HTML, pero los intpreta de un
+
+        modo diferente.
+
+
+        Lo que implementan los objetos de un formulario  son una serie de estados por los que pasa el campo
+
+        cuando el usuario esta utilizando el formulario. Dichos estados son los siguientes:
+
+            1.  Dirty: 'true' cuando el usuario comienza a utilizar el campo.
+
+            2.  Pristine: 'true' cuando el usuario an no utilizó el campo.
+
+            3.  Touched: 'true' cuando el usuario usa y sale del foco del campo.
+
+            4.  Valid: 'true' cuando el campo cumple las normar de validación que le hemos establecido.
+
+            5.  Invalid: 'true' cuando el campo no cumple las normar de validación que le hemos establecido.
+
+        
+        Angular tiene unas clases CSS para cada estado que nos permiten configurar las ayudas al usuario a la 
+
+        hora de completar formularios.
+
+
+
+
