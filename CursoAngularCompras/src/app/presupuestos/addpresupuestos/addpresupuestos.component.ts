@@ -15,7 +15,15 @@ export class AddpresupuestosComponent implements OnInit {
 
   presupuesto: any;
 
- 
+  // para valueChangues : para hacer operaciones aritmeticas en tiemoo real :
+  // nos va a calcular el valo total segun los valores de baseimponible e iva
+  baseimponible: any;
+  tipoiva: any ;
+  importeiva: any = 0;
+  total: any = 0;
+  
+ //CONSTRUCTOR
+
   constructor( private pf: FormBuilder) { }
 
   ngOnInit() {
@@ -28,8 +36,12 @@ export class AddpresupuestosComponent implements OnInit {
       concepto: [ '' , [ Validators.required , Validators.minLength(10) ] ],
       baseimponible: [ '' , [ Validators.required ] ] ,
       tipoiva: [ '' , [ Validators.required ] ] ,
-      total: [ '' , [ Validators.required ] ] ,
+   
+      importeiva: this.importeiva ,
+      total: this.total ,
     });
+
+    this.onChanges();
 
   }
 
@@ -47,12 +59,27 @@ export class AddpresupuestosComponent implements OnInit {
       concepto: this.presupuestoForm.get('concepto').value,
       baseimponible: this.presupuestoForm.get('baseimponible').value,
       tipoiva: this.presupuestoForm.get('tipoiva').value,
+      importeiva: this.presupuestoForm.get('importeiva').value,
       total: this.presupuestoForm.get('total').value,     
 
     }
 
     return savePresupuesto;
 
+  }
+
+  onChanges(){
+
+    this.presupuestoForm.valueChanges.subscribe(valor =>{
+
+      this.baseimponible = valor.baseimponible;
+      this.tipoiva = valor.tipoiva;
+      this.presupuestoForm.value.importeiva =  this.baseimponible * this.tipoiva  ;
+      this.presupuestoForm.value.total =  this.baseimponible + ( this.baseimponible * this.tipoiva ) ;
+
+
+
+    })
   }
 
 }

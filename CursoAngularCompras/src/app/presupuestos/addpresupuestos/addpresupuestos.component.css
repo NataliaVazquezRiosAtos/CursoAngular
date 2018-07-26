@@ -13,3 +13,8 @@ input.ng-valid.ng-touched {
 .uncheck{
     color:  #a94442;
 }
+
+.form-group{
+  
+   min-height: 120px;
+}
