@@ -1,6 +1,9 @@
 import { Component , OnInit } from '@angular/core';
 import { FormControl , FormGroup , FormBuilder , Validator, Validators } from '@angular/forms';
 
+// importo el servicio de presupuestos
+import { PresupuestosService } from '../../servicios/presupuestos.service';
+
 @Component({
   selector: 'app-addpresupuestos',
   templateUrl: './addpresupuestos.component.html',
@@ -24,7 +27,7 @@ export class AddpresupuestosComponent implements OnInit {
   
  //CONSTRUCTOR
 
-  constructor( private pf: FormBuilder) { }
+  constructor( private pf: FormBuilder , private  presupuestoService : PresupuestosService) { }
 
   ngOnInit() {
 
@@ -45,9 +48,15 @@ export class AddpresupuestosComponent implements OnInit {
 
   }
 
-  // metodo añarir presupuestp desde  formulario
+  // metodo añarir presupuestp desde formulario
   enviarFormularioPresupuesto(){
      this.presupuesto = this.savePresupuesto();
+     // para post http
+     this.presupuestoService.postPresupuesto( this.presupuesto ).subscribe(
+       
+      newpres =>{
+
+      })
   }
 
   savePresupuesto(){
@@ -76,8 +85,6 @@ export class AddpresupuestosComponent implements OnInit {
       this.tipoiva = valor.tipoiva;
       this.presupuestoForm.value.importeiva =  this.baseimponible * this.tipoiva  ;
       this.presupuestoForm.value.total =  this.baseimponible + ( this.baseimponible * this.tipoiva ) ;
-
-
 
     })
   }

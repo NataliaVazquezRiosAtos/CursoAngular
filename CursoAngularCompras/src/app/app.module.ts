@@ -17,6 +17,11 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
 import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
 import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpresupuestos.component';
+import { PresupuestosService } from './servicios/presupuestos.service';
+
+// importamos dependencias para peticiones http
+import { HttpModule } from '@angular/http';
+
 
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
 
@@ -72,12 +77,13 @@ const rutas : Routes  = [
 
     RouterModule.forRoot(rutas),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
     
   ],
 
   // se mete  el servicio dentro del array
-  providers: [ProveedoresService],
+  providers: [ ProveedoresService ,PresupuestosService],
 
   bootstrap: [AppComponent]
 
