@@ -14,7 +14,10 @@ input.ng-valid.ng-touched {
     color:  #a94442;
 }
 
-.form-group{
-  
+.form-group{  
    min-height: 120px;
+}
+
+.btn-danger{
+    margin-right: 1em;
 }

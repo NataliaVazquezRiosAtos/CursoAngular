@@ -1,0 +1,54 @@
+<div class="text-center">
+
+    <hr>
+  
+    <h3 class="text-success">LISTADO DE PRESUPUESTOS</h3>
+  
+    <a class=" btn btn-success float-left" routerLink="addpresupuestos">A&ntilde;adir Presupuesto</a>
+  
+    <div class="table-responsive">
+  
+      <table class="table table-bordered">
+  
+        <thead>
+  
+          <tr class="filters bg-info">
+  
+            <th class="text-center">Proveedor</th>
+            <th class="text-center">Fecha</th>
+            <th class="text-center">Concepto</th>
+            <th class="text-center">Base Imponible</th>
+            <th class="text-center">Tipo IVA</th>  
+            <th class="text-center">Base IVA</th>    
+            <th class="text-center">Total</th>       
+  
+          </tr>
+  
+        </thead>
+  
+        <tbody>
+
+          <!-- recojo todos los presupuestos de bbdd -->
+  
+          <tr *ngFor="let presupuesto of presupuestos">
+  
+            <td> {{ presupuesto.proveedor }} </td>
+            <td> {{ presupuesto.fecha }} </td>
+            <td> {{ presupuesto.concepto }} </td>
+            <td> {{ presupuesto.baseimponible }} </td>
+            <td> {{ presupuesto.tipoiva }} </td>
+            <td> {{ presupuesto.importeiva }} </td>
+            <td> {{ presupuesto.total }} </td>
+          
+          </tr>
+  
+        </tbody>
+  
+      </table>
+  
+    </div>
+  
+    <hr>
+  
+  </div>
+  

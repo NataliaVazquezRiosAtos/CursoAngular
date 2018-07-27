@@ -1,13 +1,29 @@
-import { Component, OnInit } from '@angular/core';
 
-// importamos el servicio
+/*********************************************************************************************************/
+/****************************************  IMPORTANCIONES ANGULAR ****************************************/
+/*********************************************************************************************************/
+
+import { Component , OnInit } from '@angular/core';
+
+
+/*********************************************************************************************************/
+/*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS *********************************/
+/*********************************************************************************************************/
+
+// importamos el servicio de proveedores
 import { ProveedoresService } from '../../servicios/proveedores.service';
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
 
 @Component({
   selector: 'app-proveedores',
   templateUrl: './proveedores.component.html',
   styleUrls: ['./proveedores.component.css']
 })
+
 export class ProveedoresComponent implements OnInit {
 
   // ATRIBUTOS
@@ -20,10 +36,18 @@ export class ProveedoresComponent implements OnInit {
   // objeto servicio
   constructor( private proveedoresServicio : ProveedoresService) { }
 
-  // se llama al metodo del servicio desde el componente
-  // ngOnInit() : relaiza una funcion semejante a la del constructor :
-  // cada vez que se inicialice dentro cel ciclo de vida de los componentes Angular,
-  // este componente llevara a cabo el codigo que escribamos dentro
+  /*
+
+    se llama al metodo del servicio desde el componente ngOnInit() :
+    
+    relaiza una funcion semejante a la del constructor :
+
+    cada vez que se inicialice dentro cel ciclo de vida de los componentes Angular,
+
+    este componente llevara a cabo el codigo que escribamos dentro
+
+  */
+
   ngOnInit() {
 
     this.proveedores = this.proveedoresServicio.getProveedores();

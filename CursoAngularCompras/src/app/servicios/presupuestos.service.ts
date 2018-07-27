@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 
 // para emplear metodo post
 import { Headers , Http , Response } from '@angular/http';
-//import 'rxjs/Rx'; 
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -33,10 +33,19 @@ export class PresupuestosService {
       'ContentType':'application/json'
     });
     return this.http.post( this.presURL, newpres, {headers})
-    .pipe(map(res => {
-      console.log(res.json());
-      return res.json();
-    }));
+      .pipe(map(res => {
+        console.log(res.json());
+        return res.json();
+      }));
+  }
+
+  // metodo para listar los objetos presupuesto de la bbdd
+
+  getPresupuestos(){
+
+    return this.http.get(this.presURL)
+    .pipe(map(res => res.json()
+    ));
   }
 
 }

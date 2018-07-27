@@ -27,6 +27,7 @@ import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
 import { EuroPipe } from './euro.pipe';
 
+
 /* para el componente */
 @NgModule({
 

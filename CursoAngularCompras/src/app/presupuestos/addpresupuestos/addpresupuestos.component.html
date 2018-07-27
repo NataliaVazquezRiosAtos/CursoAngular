@@ -2,7 +2,19 @@
 
   <div class="col-10 col-md-8">    
 
-    <h2 class="text-success text-center">Añadir nuevo presupuesto</h2>
+    <h2 class="text-success text-center">Añadir  Presupuesto</h2>
+
+    <p class="text-center"> 
+
+        <a class="text-success"  routerLink="/listpresupuestos" title=" Volver al Listado de Presupuestos"> 
+        
+        <i class="far fa-arrow-alt-circle-left"></i>
+
+        Volver al Listado de Presupuestos
+      
+      </a>
+
+    </p>
 
     <!--  [formGroup] : para formularios reactive -->
     <!--  'formControlName' : hay que ponerlos en todos los capos del formulario : es como el name de html -->
@@ -117,10 +129,14 @@
 
       </div>
 
-      <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">      
-          <button type="submit" class="btn btn-success" [disabled]="!presupuestoForm.valid">
-            Añadir Presupuesto
-          </button>
+      <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
+        
+        <a class=" btn btn-danger"  routerLink="/listpresupuestos" title=" Cancelar"> Cancelar</a>
+      
+        <button type="submit" class="btn btn-success " [disabled]="!presupuestoForm.valid">
+          Añadir Presupuesto
+        </button>
+
       </div>
 
     </form>

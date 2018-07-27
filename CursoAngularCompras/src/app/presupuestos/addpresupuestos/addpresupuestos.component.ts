@@ -50,13 +50,19 @@ export class AddpresupuestosComponent implements OnInit {
 
   // metodo añarir presupuestp desde formulario
   enviarFormularioPresupuesto(){
-     this.presupuesto = this.savePresupuesto();
-     // para post http
-     this.presupuestoService.postPresupuesto( this.presupuesto ).subscribe(
-       
-      newpres =>{
 
-      })
+    this.presupuesto = this.savePresupuesto();
+
+    // para post http
+    this.presupuestoService.postPresupuesto( this.presupuesto ).subscribe(
+       
+      newpres =>{}
+    
+    )
+
+    // para resetear el formulario al crear un nuevo presupuesto
+    this.presupuestoForm.reset();
+
   }
 
   savePresupuesto(){
