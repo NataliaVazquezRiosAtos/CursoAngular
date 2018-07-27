@@ -19,7 +19,8 @@
             <th class="text-center">Tipo IVA</th>  
             <th class="text-center">Base IVA</th>    
             <th class="text-center">Total</th> 
-            <th class="text-center"></th>          
+            <th></th>
+            <th></th>           
   
           </tr>
   
@@ -38,11 +39,18 @@
             <td> {{ presupuesto.tipoiva }} </td>
             <td> {{ presupuesto.importeiva }} </td>
             <td> {{ presupuesto.total }} </td>
+
             <td>
-              <button type="button" class="btn btn-success" title="Editar Presupuesto" routerLink="editpresupuestos/{{ presupuesto.id$ }}">
-                <i class="far fa-edit"></i>
+              <button type="button" class="btn btn-danger" title="eliminar presupuesto" (click)="eliminarPresupuesto(presupuesto.id$)">
+                <i class="far fa-trash-alt"></i>
               </button>
             </td>
+
+            <td>
+              <button type="button" class="btn btn-success" title="editar presupuesto" routerLink="editpresupuestos/{{ presupuesto.id$ }}">
+                <i class="far fa-edit"></i>
+              </button>
+            </td>                     
           
           </tr>
   

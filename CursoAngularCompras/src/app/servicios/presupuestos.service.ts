@@ -115,13 +115,28 @@ export class PresupuestosService {
 
     return this.http.put( url , newpre , {headers} )
 
-      .pipe(map(res => {
+      .pipe(map( res => {
 
         console.log(res.json());
 
         return res.json();
 
       }));
+
+  }
+
+  // para borrar un presupuesto de la base de datos
+  delPresupuesto( id$:string){
+
+    const url = `${this.preURL}/${id$}.json`;
+
+    return this.http.delete(url)
+
+      .pipe(map ( res =>
+        
+        res.json()
+
+      ));
 
   }
 

@@ -63,5 +63,39 @@ export class PresupuestosComponent implements OnInit {
   ngOnInit() {
   }
 
+  // para eliminar un registro
+
+  eliminarPresupuesto(id$) {
+
+      this.presupuestoService.delPresupuesto(id$)
+
+        .subscribe( res => {
+
+          // se vacia el array de presupuestos y se le vuelven a volcar los datos
+          // para que al eliminar el presupuesto se vea que se elimino en la lista
+          // sin necesidad de tener que recargar la pagina
+
+          this.presupuestos = [] ;
+
+          this.presupuestoService.getPresupuestos()
+
+            .subscribe( presupuestos => {
+
+              for ( const id$ in presupuestos ) {
+
+                const p = presupuestos[id$] ;
+
+                p.id$ = id$ ;
+
+                this.presupuestos.push(presupuestos[id$]);
+
+              }
+
+            })
+
+        })
+
+    }
+
 }
  
