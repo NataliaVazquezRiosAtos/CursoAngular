@@ -1,0 +1,157 @@
+<!--
+
+    el formulario de actualizar presupuestos es el mismo que el de modificar presupuestos ,
+    solo que le añadimos a cada xx del formulario el siguiente atributo :
+    [(ngModel)]="nombreDelObjeto.propiedadDelObjeto" 
+
+-->
+
+
+<div class="row justify-content-md-center">  
+
+    <div class="col-10 col-md-8">    
+  
+      <h2 class="text-success text-center">Modificar  Presupuesto</h2>
+  
+      <p class="text-center"> 
+  
+          <a class="text-success"  routerLink="/listpresupuestos" title=" Volver al Listado de Presupuestos"> 
+          
+          <i class="far fa-arrow-alt-circle-left"></i>
+  
+          Volver al Listado de Presupuestos
+        
+        </a>
+  
+      </p>
+  
+      <!--  [formGroup] : para formularios reactive -->
+      <!--  'formControlName' : hay que ponerlos en todos los capos del formulario : es como el name de html -->
+      <form class="row" [formGroup]="presupuestoForm" (ngSubmit)="enviarFormularioPresupuesto()">
+  
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 row">
+  
+          <div class=" form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+  
+            <label for="proveedor">Proveedor</label>
+  
+            <!-- mensaje de validacion correcta -->
+            <!-- 'presupuestoForm.controls.proveedor.valid : proveedor = id del campo -->
+            <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.proveedor.valid" > </i>
+  
+            <!-- mensaje de validacion incorrecta -->
+            <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.proveedor.invalid && presupuestoForm.controls.proveedor.touched" ></i>
+  
+            <input  type="text"  class="form-control"  id="proveedor"  formControlName="proveedor"  [(ngModel)]="presupuesto.proveedor" >
+  
+            <p class="alert alert-danger" *ngIf="presupuestoForm.controls.proveedor.invalid && presupuestoForm.controls.proveedor.touched">
+              El campo proveedor es obligatorio.
+            </p>
+            
+          </div>       
+  
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  
+            <label for="fecha">Fecha</label>
+  
+            <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.fecha.valid" > </i>
+  
+            <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.fecha.invalid && presupuestoForm.controls.fecha.touched" ></i>
+  
+            <input  type="date"  class="form-control"  id="fecha"  formControlName="fecha" [(ngModel)]="presupuesto.fecha"  >
+  
+            <p class="alert alert-danger" *ngIf="presupuestoForm.controls.fecha.invalid && presupuestoForm.controls.fecha.touched">
+              El campo fecha es obligatorio.
+            </p>
+  
+          </div>
+  
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  
+            <label for="concepto">Concepto</label>
+  
+            <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.concepto.valid" > </i>
+  
+            <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.concepto.invalid && presupuestoForm.controls.concepto.touched" ></i>
+  
+            <input  type="text"  class="form-control"  id="concepto"  formControlName="concepto"  [(ngModel)]="presupuesto.concepto" >
+  
+            <p class="alert alert-danger" *ngIf="presupuestoForm.controls.concepto.invalid && presupuestoForm.controls.concepto.touched">
+              El campo concepto es obligatorio y debe contener al menos 10 caracteres.
+            </p>
+  
+          </div>    
+          
+          <div class=" form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 "></div>
+  
+        </div>
+  
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 row">
+  
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  
+            <label for="baseimponible">Base Imponible</label>
+  
+            <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.baseimponible.valid" > </i>
+  
+            <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.baseimponible.invalid && presupuestoForm.controls.baseimponible.touched" ></i>
+  
+            <input  type="number"  class="form-control"  id="baseimponible"  formControlName="baseimponible" [(ngModel)]="presupuesto.baseimponible"  >
+            
+            <p class="alert alert-danger" *ngIf="presupuestoForm.controls.baseimponible.invalid && presupuestoForm.controls.baseimponible.touched">
+              El campo base imponible es obligatorio.
+            </p>
+  
+          </div>
+  
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  
+            <label for="tipoiva">Tipo de IVA</label>
+  
+            <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.tipoiva.valid" > </i>
+  
+            <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.tipoiva.invalid && presupuestoForm.controls.tipoiva.touched" ></i>
+  
+            <select  class="form-control"  id="tipoiva"  formControlName="tipoiva"  [(ngModel)]="presupuesto.tipoiva"  >
+              <option  value="">-- Tipo IVA --</option>
+              <option  value=0>0</option>
+              <option  value=0.04>4</option>
+              <option  value=0.10>10</option>
+              <option  value=0.21>21</option>
+            </select>
+  
+            <p class="alert alert-danger" *ngIf="presupuestoForm.controls.tipoiva.invalid && presupuestoForm.controls.tipoiva.touched">
+              El campo tipo de IVA es obligatorio.
+            </p>
+  
+          </div>      
+          
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <label for="tipoiva">Importe IVA</label>
+            <input  type="number"  class="form-control"  id="importeiva"  formControlName="importeiva" [(ngModel)]="presupuestoForm.value.importeiva" readonly >
+          </div> 
+            
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <label for="total">Total Presupuesto</label>   
+            <input  type="number"  class="form-control"  id="total"  formControlName="total" [(ngModel)]="presupuestoForm.value.total"  readonly>
+          </div>
+  
+        </div>
+  
+        <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
+          
+          <a class=" btn btn-danger"  routerLink="/listpresupuestos" title=" Cancelar"> Cancelar</a>
+        
+          <button type="submit" class="btn btn-success " [disabled]="!presupuestoForm.valid">
+            Modificar Presupuesto
+          </button>
+  
+        </div>
+  
+      </form>
+  
+    </div> 
+  
+  </div>
+    
+    

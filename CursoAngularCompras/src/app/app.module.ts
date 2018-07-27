@@ -30,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
 import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpresupuestos.component';
 import { PresupuestosService } from './servicios/presupuestos.service';
+import { EditpresupuestosComponent } from './presupuestos/editpresupuestos/editpresupuestos.component';
 
 
 /*********************************************************************************************************/
@@ -53,15 +54,19 @@ const rutas : Routes  = [
 
   // RUTA AÑADIR PROVEEDOR
   // la ruta 'proveedores/addproveedores' llama al componente AddProveedoresComponent
-  { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent} , 
+  { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent } , 
 
   // RUTA LISTADO PRESUPUESTOS 
   // la ruta 'listpresupuestos' llama al componente PresupuestosComponent
-  { path : 'listpresupuestos' , component :  PresupuestosComponent} , 
+  { path : 'listpresupuestos' , component :  PresupuestosComponent } , 
 
   // RUTA AÑADIR PRESUPUESTOS 
   // la ruta 'listpresupuestos/addpresupuestos' llama al componente AddpresupuestosComponent
-  { path : 'listpresupuestos/addpresupuestos' , component :  AddpresupuestosComponent} , 
+  { path : 'listpresupuestos/addpresupuestos' , component :  AddpresupuestosComponent } , 
+
+  // RUTA MODIFICAR PRESUPUESTOS 
+  // la ruta 'listpresupuestos/editpresupuestos' llama al componente EditpresupuestosComponent
+  { path : 'listpresupuestos/editpresupuestos' , component :  EditpresupuestosComponent } , 
 
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
@@ -81,8 +86,9 @@ const rutas : Routes  = [
     HeaderComponent,
     AddProveedoresComponent,
     AddpresupuestosComponent,
-    PresupuestosComponent
-   
+    PresupuestosComponent,
+    EditpresupuestosComponent
+
   ],
 
   // añadimos  componentes Angular  
