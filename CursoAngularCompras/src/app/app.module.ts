@@ -16,12 +16,11 @@ import { Routes , RouterModule } from '@angular/router';
 
 // importamos dependencias para peticiones http
 import { HttpModule } from '@angular/http';
-import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
-
 
 /*********************************************************************************************************/
 /**************************  IMPORTANCIONES DE NUESTROS SERVICIOS Y COMPONENTES **************************/
 /*********************************************************************************************************/
+
 
 import { ProveedoresService } from './servicios/proveedores.service';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
@@ -30,6 +29,7 @@ import { HeaderComponent } from './header/header.component';
 import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
 import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpresupuestos.component';
 import { PresupuestosService } from './servicios/presupuestos.service';
+import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresupuestosComponent } from './presupuestos/editpresupuestos/editpresupuestos.component';
 
 
@@ -65,8 +65,9 @@ const rutas : Routes  = [
   { path : 'listpresupuestos/addpresupuestos' , component :  AddpresupuestosComponent } , 
 
   // RUTA MODIFICAR PRESUPUESTOS 
-  // la ruta 'listpresupuestos/editpresupuestos' llama al componente EditpresupuestosComponent
-  { path : 'listpresupuestos/editpresupuestos' , component :  EditpresupuestosComponent } , 
+  // la ruta 'listpresupuestos/editpresupuestos/id' llama al componente EditpresupuestosComponent
+  // con '/:id' especificamos la ruta especifica para llegar al objeto presupuesto que queremos modificar
+  { path : 'listpresupuestos/editpresupuestos/:id' , component :  EditpresupuestosComponent } , 
 
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
@@ -113,7 +114,13 @@ const rutas : Routes  = [
   ],
 
   // añadimos los servicios que creamos dentro del array
-  providers: [ ProveedoresService , PresupuestosService ],
+  providers: [ 
+
+    ProveedoresService , 
+
+    PresupuestosService 
+
+  ],
 
   bootstrap: [ AppComponent ]
 

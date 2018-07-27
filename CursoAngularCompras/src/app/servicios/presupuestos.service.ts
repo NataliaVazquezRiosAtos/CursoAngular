@@ -15,7 +15,7 @@ import { Injectable } from '@angular/core';
 // para emplear metodo post
 import { Headers , Http , Response } from '@angular/http';
 
-import { Observable } from 'rxjs';
+//import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
 
@@ -47,7 +47,7 @@ export class PresupuestosService {
   // METODOS
 
   // metodo para insertar objetos presupuesto en la bbdd
-  postPresupuesto( presupuesto: any ) : Observable<number> {
+  postPresupuesto( presupuesto: any ) {
 
     const newpres = JSON.stringify( presupuesto );
 
@@ -84,11 +84,11 @@ export class PresupuestosService {
 
   // para actualizar un registro en la bbdd
   // primero tenemos que recoger el registro a actualizar en bbdd
-  getPresupuesto( id$ : string ){
+  getPresupuesto( id$: string ){
 
     // url compuesta por la 'preURL' + id ( del objeto .json )
     // se compone : https://cursoangularcompras.firebaseio.com/presupuestos/idDelObjeto.json
-    const url = `${ this.preURL}/${id$}.json`;
+    const url = `${this.preURL}/${id$}.json`;
 
     return this.http.get(url)
 
@@ -101,19 +101,19 @@ export class PresupuestosService {
   }
 
   // despues lo actualizamos
-  putPresupuesto ( presupuesto : any , id$ : string ){
+  putPresupuesto ( presupuesto: any , id$: string ){
 
-    const newpres = JSON.stringify( presupuesto );
+    const newpre = JSON.stringify( presupuesto );
 
     const headers = new Headers({
 
       'ContentType':'application/json'
 
     });
+ 
+    const url = `${this.preURL}/${id$}.json`;
 
-    const url = `${ this.preURL}/${id$}.json`;
-
-    return this.http.post( url , newpres , {headers} )
+    return this.http.put( url , newpre , {headers} )
 
       .pipe(map(res => {
 
