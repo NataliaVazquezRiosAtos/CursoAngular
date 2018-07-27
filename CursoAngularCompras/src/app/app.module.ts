@@ -31,6 +31,7 @@ import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpres
 import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresupuestosComponent } from './presupuestos/editpresupuestos/editpresupuestos.component';
+import { NuevousuarioComponent } from './autenticacion/nuevousuario/nuevousuario.component';
 
 
 /*********************************************************************************************************/
@@ -69,6 +70,10 @@ const rutas : Routes  = [
   // con '/:id' especificamos la ruta especifica para llegar al objeto presupuesto que queremos modificar
   { path : 'listpresupuestos/editpresupuestos/:id' , component :  EditpresupuestosComponent } , 
 
+  // RUTA NUEVO USUARIO
+  // la ruta 'home/nuevousuario' llama al componente NuevousuarioComponent
+  { path : 'inicio/nuevousuario' , component :  NuevousuarioComponent } , 
+
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
   // la ruta '**' llama al componente inicio
@@ -88,7 +93,8 @@ const rutas : Routes  = [
     AddProveedoresComponent,
     AddpresupuestosComponent,
     PresupuestosComponent,
-    EditpresupuestosComponent
+    EditpresupuestosComponent,
+    NuevousuarioComponent
 
   ],
 
