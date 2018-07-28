@@ -148,6 +148,7 @@ const rutas : Routes  = [
 
   ],
 
+  // determina cual es el modulo raiz
   bootstrap: [ AppComponent ]
 
 })

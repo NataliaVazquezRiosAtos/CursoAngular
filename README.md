@@ -259,6 +259,76 @@ FORMULARIOS
         los 'formularios reactive'.
 
 
+FIREBASE
+
+    Firebase es una plataforma pra el desarrollo de aplicaciones web y móviles.
+
+    Para esta aplicación usaremos su base de datos en la nube  y autenticacion.
+
+    Para poder usar esta plataforma lo primero que tenemos que hacer, es crear una cuanta de Google. Pasos :
+
+        1. Crear una cuenta e iniciar sesión.
+
+        2. Entrar en firebase.google.com
+
+        3. Pulsar 'Ir a la consola'.
+
+        4. Pulsar en 'Añadir Proyecto'.
+
+        5. Pulsar en 'Database'.
+
+        6. Pulsar en 'Cloud Firestore Beta'.
+
+        7. Pulsar 'Añadir colección'. ( para crear una 'tabla' de bbdd )
+
+        8. Seleccionar 'Realtime Database'. ( vemos la ruta del proyecto para poder usarla )
+
+        9. Pulsar 'Reglas' y ponemos : 
+
+            {
+
+                "rules": {
+
+                ".read": true,
+
+                ".write": true
+
+                }
+
+            }
+
+
+
+
+SERVICIO PARA AUTENTICACION CON FIREBASE
+
+    Para gestionar autenticaciones, empleamos una API de Firebase.
+
+    Para ello tenemos que hacer las siguientes instalaciones  ( desde consola ) :
+
+        npm install firebase angularfire2 --save
+
+
+CREACIÓN DE NUEVOS MÓDULOS
+
+    Angular es un framework  que permite crear aplicaciones modularizables, de hecho, todas las aplicaciones 
+    
+    deben tener al menos un módulo.
+
+
+    En aplicaciones grandes es aconsejable tener diferentes módulos que agrupen los componentes  por el 
+
+    tipo de funcionalidad que realicen.
+
+
+    Para crear un nuevo módulo ( desde consola ) :
+
+        ng generate module nombreDelModulo 
+
+
+    Cuando generamos un módulo, no está incorporado en el módulo raíz, por lo que hay que importarlo manualmente. 
+
+
 
 
 
