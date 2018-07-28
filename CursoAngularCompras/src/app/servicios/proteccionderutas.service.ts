@@ -1,13 +1,23 @@
+/*
+ * IMPORTANTE! 
+ * 
+ * Al crear un servicio desde consola, acordarse de importar el servicio y meterlo en el array 
+ * de providers del archivo 'app.module.ts'
+ * 
+ * Al servicio que protege las rutas se le suele llamar 'guard'
+ * 
+ */
 
 /*********************************************************************************************************/
 /****************************************  IMPORTANCIONES ANGULAR ****************************************/
 /*********************************************************************************************************/
 
 
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-// importacion para las rutas
-import { Router, ActivatedRoute } from '@angular/router';
+// importacion para la proteccion de rutas
+import { CanActivate , ActivatedRouteSnapshot , RouterStateSnapshot } from '@angular/router';
+
 
 
 /*********************************************************************************************************/
@@ -19,44 +29,28 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AutenticacionService } from '../servicios/autenticacion.service';
 
 
+
 /*********************************************************************************************************/
 /*********************************************************************************************************/
 /*********************************************************************************************************/
 
 
-@Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+@Injectable({
+
+  providedIn: 'root'
+
 })
 
-export class HeaderComponent implements OnInit {
+export class ProteccionderutasService implements CanActivate{
 
-  // CONSTRUCTOR
+  // CONTRUCTOR
 
-  constructor(  private autenticacionService : AutenticacionService ,
-                private router : Router ,
-                private activatedRoute : ActivatedRoute ) { }
+  constructor( private autenticacionService : AutenticacionService ) { }
 
-  ngOnInit() {
-  }
+  // vamos a llamar a este metodo en las rutas que querammos proteger ( en el archivo app.module.ts )
+  canActivate( route : ActivatedRouteSnapshot , state : RouterStateSnapshot ) {
 
-  // METODOS
-
-
-  // metodo para comprobar si el usuario a iniciado sesion
-  isAuth(){
-
-    return this.autenticacionService.isAuthenticated() ;
-
-  }
-
-  // metodo para cerrar sesion
-  onLogout(){
-
-    this.autenticacionService.logout() ;
-
-    this.router.navigate(['/inicio']) ;
+    return this.autenticacionService.isAuthenticated();
 
   }
 

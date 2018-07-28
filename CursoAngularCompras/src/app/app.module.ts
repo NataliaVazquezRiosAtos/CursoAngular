@@ -30,6 +30,7 @@ import * as firebase from 'firebase';
 import { ProveedoresService } from './servicios/proveedores.service';
 import { PresupuestosService } from './servicios/presupuestos.service';
 import { AutenticacionService } from './servicios/autenticacion.service';
+import { ProteccionderutasService } from './servicios/proteccionderutas.service';
 
 // componentes
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
@@ -49,6 +50,7 @@ import { LoginComponent } from './autenticacion/login/login.component';
 
 // RUTAS
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
+//  canActivate : [ProteccionderutasService] : para proteger las rutas de la aplicacion
 const rutas : Routes  = [
 
   // path : ruta
@@ -60,32 +62,32 @@ const rutas : Routes  = [
 
   // RUTA DE LISTADO PROVEEDORES
   // la ruta 'proveedores' llama al componente ProveedoresComponent
-  { path : 'proveedores' , component : ProveedoresComponent } , 
+  { path : 'proveedores' , component : ProveedoresComponent , canActivate : [ProteccionderutasService] } , 
 
   // RUTA AÑADIR PROVEEDOR
   // la ruta 'proveedores/addproveedores' llama al componente AddProveedoresComponent
-  { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent } , 
+  { path : 'proveedores/addproveedores' , component :  AddProveedoresComponent , canActivate : [ProteccionderutasService]} , 
 
   // RUTA LISTADO PRESUPUESTOS 
   // la ruta 'listpresupuestos' llama al componente PresupuestosComponent
-  { path : 'listpresupuestos' , component :  PresupuestosComponent } , 
+  { path : 'listpresupuestos' , component :  PresupuestosComponent , canActivate : [ProteccionderutasService] } , 
 
   // RUTA AÑADIR PRESUPUESTOS 
   // la ruta 'listpresupuestos/addpresupuestos' llama al componente AddpresupuestosComponent
-  { path : 'listpresupuestos/addpresupuestos' , component :  AddpresupuestosComponent } , 
+  { path : 'listpresupuestos/addpresupuestos' , component :  AddpresupuestosComponent , canActivate : [ProteccionderutasService] } , 
 
   // RUTA MODIFICAR PRESUPUESTOS 
   // la ruta 'listpresupuestos/editpresupuestos/id' llama al componente EditpresupuestosComponent
   // con '/:id' especificamos la ruta especifica para llegar al objeto presupuesto que queremos modificar
-  { path : 'listpresupuestos/editpresupuestos/:id' , component :  EditpresupuestosComponent } , 
+  { path : 'listpresupuestos/editpresupuestos/:id' , component :  EditpresupuestosComponent , canActivate : [ProteccionderutasService] } , 
 
   // RUTA NUEVO USUARIO / REGISTRO
   // la ruta 'home/nuevousuario' llama al componente NuevousuarioComponent
-  { path : 'inicio/nuevousuario' , component :  NuevousuarioComponent } , 
+  { path : 'inicio/nuevousuario' , component :  NuevousuarioComponent , canActivate : [ProteccionderutasService] } , 
 
   // RUTA LOGIN
   // la ruta 'login' llama al componente LoginComponent
-  { path : 'login' , component :  LoginComponent } , 
+  { path : 'login' , component :  LoginComponent , canActivate : [ProteccionderutasService]} , 
 
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
@@ -141,6 +143,8 @@ const rutas : Routes  = [
     PresupuestosService ,
 
     AutenticacionService,
+
+    ProteccionderutasService,
 
   ],
 
