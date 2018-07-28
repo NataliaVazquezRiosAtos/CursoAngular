@@ -1,0 +1,50 @@
+
+<div class="row justify-content-md-center">  
+
+    <div class="col-11 col-md-3">    
+  
+      <h2 class="text-success text-center">Nuevo Usuario</h2>
+  
+      <p class="text-center"> 
+  
+        <a class="text-success"  routerLink="/inicio" title="volver a inicio"> 
+          
+          <i class="far fa-arrow-alt-circle-left"></i>
+  
+          Volver a Inicio
+        
+        </a>
+  
+      </p>  
+     
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" > 
+   
+        <div class="form-group">  
+
+          <label for="email">Email</label>    
+
+          <input  type="email"  class="form-control"  id="email" formControlName="email" autofocus>
+
+        </div> 
+
+        <div class="form-group">  
+
+          <label  for="password">Contrase&ntilde;a</label>     
+
+          <input  type="password"  class="form-control"  id="password" formControlName="password" >
+
+        </div>  
+         
+        <div class="form-group">         
+          <button type="submit" class="btn btn-info " [disabled]="!loginForm.valid">
+            Iniciar Sesi&oacute;n
+          </button>  
+        </div>
+  
+      </form>
+  
+    </div> 
+  
+  </div>
+    
+    

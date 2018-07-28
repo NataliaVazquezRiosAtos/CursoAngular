@@ -16,7 +16,8 @@ import { Injectable } from '@angular/core';
 // importamos la libreria de firebase de autenticacion
 import * as firebase from 'firebase';
 
-
+// importacion para las rutas
+import { Router, ActivatedRoute } from '@angular/router';
 
 /*********************************************************************************************************/
 /*********************************************************************************************************/
@@ -31,7 +32,8 @@ export class AutenticacionService {
 
   // CONSTRUCTOR
 
-  constructor() { }
+  constructor(  private router: Router,
+                private activatedRouter: ActivatedRoute ) { }
 
 
   // METODOS
@@ -49,6 +51,32 @@ export class AutenticacionService {
 
       } )
 
+  }
+
+  // metodo para iniciar sesion
+  inicioSesion(userdata){
+
+    // metodo de la API de firebase para loguearse
+    firebase.auth().signInWithEmailAndPassword( userdata.email , userdata.password )
+
+      .then( response => {
+
+        console.log( response ) ;
+
+        this.router.navigate(['/inicio'])
+
+      } )
+
+      .catch(
+
+        error => {
+
+           console.log( error ) ;
+
+        }
+
+      )
+      
   }
 
 }

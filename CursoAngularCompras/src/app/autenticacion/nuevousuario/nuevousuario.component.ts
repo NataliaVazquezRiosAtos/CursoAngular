@@ -101,6 +101,7 @@ export class NuevousuarioComponent implements OnInit {
   // para enviar los datos del formulario a bbdd
   // primero guardamos el usuario
   // despues , a traves de nuestro servicio de autenticacion , registramos el usuario en firebase
+  // por ultimo , se redirige a la pagina de inicio
   onSubmit() {
 
     this.userdata = this.saveUserdata();
