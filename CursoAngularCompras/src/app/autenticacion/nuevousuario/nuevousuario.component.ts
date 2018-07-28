@@ -40,7 +40,41 @@ export class NuevousuarioComponent implements OnInit {
 
    // objeto usuario
    userdata: any; 
+
+   erroresForm = {
+
+    'email' : '' ,
+
+    'password' : ''
+
+  }
+
+  // json de mensajes de validacion ()
+  mensajesValidacion = {
+
+    'email' : {
+
+      'required' : 'El campo Email es obligatorio.' ,
+
+      'email' : 'Introduzca un Email correcto.'
+
+    },
+
+    'password' : {
+
+      'required' : 'El campo Contraseña es obligatorio.' ,
+
+      'pattern' : 'La contraseña debe tener al menos un número, una letra ' ,
+
+      'minlength' : 'y debe incluir más de 6 caracteres.'
+
+    }
+
+  }
  
+
+   // CONSTRUCTOR
+
    constructor( private formBuilder : FormBuilder ,
                 private autenticacionServicio : AutenticacionService ,
                 private router : Router,
@@ -52,9 +86,15 @@ export class NuevousuarioComponent implements OnInit {
 
       'email' : [ '' , [ Validators.required , Validators.email ] ] ,
 
-      'password' : [ '' , [ Validators.required , Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$') , Validators.minLength(8) ] ]
+      'password' : [ '' , [ Validators.required , Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$') , Validators.minLength(6) ] ]
      
     })
+
+    // llamamos al metodo valueChanges para que nos valide los campos del formulario de forma dinamica
+    this.registroForm.valueChanges.subscribe( data => this.onValueChanged( data ) ) ;
+
+    // para que se vacie
+    this.onValueChanged();
  
   }
  
@@ -85,5 +125,39 @@ export class NuevousuarioComponent implements OnInit {
     return saveUserdata;
 
   }
+
+  // metodo que gestiona dinamicamente las validaciones , 
+  onValueChanged( data? : any ) {
+
+    if ( !this.registroForm ) { 
+
+      return; 
+
+    }
+
+    const form = this.registroForm ;
+
+    for ( const field in this.erroresForm ) {
+
+      this.erroresForm[field] = '' ;
+
+      const control = form.get( field ) ;
+
+      if ( control && control.dirty && !control.valid ) {
+
+        const messages = this.mensajesValidacion[field] ;
+
+        for ( const key in control.errors ) {
+
+          this.erroresForm[field] += messages[key] + '';
+
+        }
+
+      }
+
+    }
+
+  }
+
  
 }

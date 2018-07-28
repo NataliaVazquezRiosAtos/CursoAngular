@@ -20,13 +20,35 @@
       <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" > 
    
         <div class="form-group">  
-          <label for="email">Email</label>          
-          <input  type="email"  class="form-control"  id="email" formControlName="email">
+
+          <label for="email">Email</label>    
+
+          <input  type="email"  class="form-control"  id="email" formControlName="email" autofocus>
+
+          <!-- mensaje de  validacion para email-->
+
+          <p class="alert alert-danger" *ngIf="erroresForm.email">
+
+            {{erroresForm.email}}
+
+          </p>
+
         </div> 
 
         <div class="form-group">  
-          <label  for="password">Contrase&ntilde;a</label>          
+
+          <label  for="password">Contrase&ntilde;a</label>     
+
           <input  type="password"  class="form-control"  id="password" formControlName="password" >
+
+          <!-- mensaje de  validacion para password -->
+
+          <p class="alert alert-danger" *ngIf="erroresForm.password">
+
+            {{ erroresForm.password }}
+  
+          </p>
+
         </div>  
          
         <div class="form-group">         
