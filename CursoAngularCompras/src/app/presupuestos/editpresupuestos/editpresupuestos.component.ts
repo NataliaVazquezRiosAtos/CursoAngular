@@ -117,7 +117,7 @@ export class EditpresupuestosComponent implements OnInit {
        
       newpres =>{
 
-        this.router.navigate(['/listpresupuestos']);
+        this.router.navigate(['/inicio/listpresupuestos']);
 
       }
     

@@ -7,11 +7,11 @@
   
       <p class="text-center"> 
   
-        <a class="text-success"  routerLink="/inicio" title="volver a inicio"> 
+        <a class="text-success"  routerLink="/login" title="volver a inicio"> 
           
           <i class="far fa-arrow-alt-circle-left"></i>
   
-          Volver a Inicio
+          Volver a Login
         
         </a>
   
@@ -51,10 +51,14 @@
 
         </div>  
          
-        <div class="form-group">         
+        <div class="form-group">  
+
           <button type="submit" class="btn btn-info " [disabled]="!registroForm.valid">
-            Guardar Usuario
+
+            Registrarse
+
           </button>  
+
         </div>
   
       </form>

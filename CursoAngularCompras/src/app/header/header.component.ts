@@ -43,7 +43,6 @@ export class HeaderComponent implements OnInit {
 
   // METODOS
 
-
   // metodo para comprobar si el usuario a iniciado sesion
   isAuth(){
 
