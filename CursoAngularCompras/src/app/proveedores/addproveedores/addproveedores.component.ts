@@ -1,11 +1,22 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+
+/*********************************************************************************************************/
+/****************************************  IMPORTANCIONES ANGULAR ****************************************/
+/*********************************************************************************************************/
+
+import { Component , OnInit , ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
 
 @Component({
   selector: 'app-addproveedores',
   templateUrl: './addproveedores.component.html',
   styleUrls: ['./addproveedores.component.css']
 })
+
 export class AddProveedoresComponent implements OnInit {
 
   // ATRIBUTOS

@@ -1,5 +1,24 @@
+/*
+ * IMPORTANTE! 
+ * 
+ * Al crear un servicio desde consola, acordarse de importar el servicio y meterlo en el array 
+ * de providers del archivo 'app.module.ts'
+ * 
+ */
+
+/*********************************************************************************************************/
+/****************************************  IMPORTANCIONES ANGULAR ****************************************/
+/*********************************************************************************************************/
+
+
 import { Injectable } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +58,6 @@ export class ProveedoresService {
   ]
 
   // el modo de transladar el codigo de los servicios a los componenntes se hace mediante metodos
-
   getProveedores(){
 
     return this.proveedores;

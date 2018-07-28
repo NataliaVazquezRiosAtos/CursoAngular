@@ -9,10 +9,21 @@ import { Component , OnInit } from '@angular/core';
 import { FormControl , FormGroup , FormBuilder , Validator , Validators } from '@angular/forms';
 
 
+// importaciones para las rutas
+import { Router , ActivatedRoute } from '@angular/router';
+
 /*********************************************************************************************************/
-/*********************************************************************************************************/
+/*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS *********************************/
 /*********************************************************************************************************/
 
+
+// importo el servicio de presupuestos 
+import { AutenticacionService } from '../../servicios/autenticacion.service';
+
+
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+/*********************************************************************************************************/
 
 @Component({
   selector: 'app-nuevousuario',
@@ -30,26 +41,33 @@ export class NuevousuarioComponent implements OnInit {
    // objeto usuario
    userdata: any; 
  
-   constructor( private formBuilder : FormBuilder ) { } 
+   constructor( private formBuilder : FormBuilder ,
+                private autenticacionServicio : AutenticacionService ,
+                private router : Router,
+                private activatedRouter : ActivatedRoute ) { } 
    
    ngOnInit() {
 
     this.registroForm = this.formBuilder.group({
 
-      'nombre' : [ '' , [ Validators.required , Validators.minLength(2) , Validators.maxLength(20) ] ] ,
-
       'email' : [ '' , [ Validators.required , Validators.email ] ] ,
 
-      'password' : [ '' , [Validators.required , Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$' ) , Validators.minLength(8) ] ]
+      'password' : [ '' , [ Validators.required , Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$') , Validators.minLength(8) ] ]
      
     })
  
   }
  
   // para enviar los datos del formulario a bbdd
+  // primero guardamos el usuario
+  // despues , a traves de nuestro servicio de autenticacion , registramos el usuario en firebase
   onSubmit() {
 
     this.userdata = this.saveUserdata();
+
+    this.autenticacionServicio.registroUsuario( this.userdata );
+
+    this.router.navigate(['/inicio']);
 
   }
  
@@ -58,15 +76,13 @@ export class NuevousuarioComponent implements OnInit {
 
     const saveUserdata = {
 
-      nombre: this.registroForm.get('nombre').value,
-
       email: this.registroForm.get('email').value,
 
       password: this.registroForm.get('password').value
 
     }
  
-     return saveUserdata;
+    return saveUserdata;
 
   }
  

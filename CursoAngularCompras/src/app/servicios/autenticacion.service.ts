@@ -1,41 +1,54 @@
+/*
+ * IMPORTANTE! 
+ * 
+ * Al crear un servicio desde consola, acordarse de importar el servicio y meterlo en el array 
+ * de providers del archivo 'app.module.ts'
+ * 
+ */
+
 /*********************************************************************************************************/
 /****************************************  IMPORTANCIONES ANGULAR ****************************************/
 /*********************************************************************************************************/
 
 
-import { Component , OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 // importamos la libreria de firebase de autenticacion
 import * as firebase from 'firebase';
 
 
+
 /*********************************************************************************************************/
 /*********************************************************************************************************/
 /*********************************************************************************************************/
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+
+@Injectable({
+  providedIn: 'root'
 })
 
-export class AppComponent implements OnInit{
-  title = 'app';
-  // cuando se arranque la aplicacion , se ejecutara este metodo para conectarnos a firebase
+export class AutenticacionService {
 
-  ngOnInit(): void {
+  // CONSTRUCTOR
+
+  constructor() { }
+
+
+  // METODOS
+
+  // metodo para registrar un nuevo usuario
+  registroUsuario( userdata ) {
     
-    firebase.initializeApp({
+    // metodo para enviar a firebase los datos de email y contraseña de un usuario
+    // no utilizamos el metodo http , sino la libreria que nos proporciona firebase
+    firebase.auth().createUserWithEmailAndPassword ( userdata.email , userdata.password )
 
-      // tenemos que ir a firebase
-      // *Authentication  *Metodo de inicio de sesion  *Habilitar correo y contraseña
-      // *Configuracion web : copiamos 'apiKey' y 'authDomain' que  son claves de la API de comunicacion firebase
+      .catch ( error => {
 
-      apiKey: "AIzaSyCPSyy8GDg74IlT003z-Ziv8nDWV81-Oqs",
-      authDomain: "cursoangularcompras.firebaseapp.com"
+        console.log( error ); 
 
-    })
+      } )
 
   }
-  
+
 }

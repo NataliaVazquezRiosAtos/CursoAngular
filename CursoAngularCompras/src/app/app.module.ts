@@ -17,18 +17,26 @@ import { Routes , RouterModule } from '@angular/router';
 // importamos dependencias para peticiones http
 import { HttpModule } from '@angular/http';
 
+// importamos la libreria de firebase de autenticacion
+import * as firebase from 'firebase'; 
+
+
+
 /*********************************************************************************************************/
 /**************************  IMPORTANCIONES DE NUESTROS SERVICIOS Y COMPONENTES **************************/
 /*********************************************************************************************************/
 
-
+// servicios
 import { ProveedoresService } from './servicios/proveedores.service';
+import { PresupuestosService } from './servicios/presupuestos.service';
+import { AutenticacionService } from './servicios/autenticacion.service';
+
+// componentes
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
 import { AddProveedoresComponent } from './proveedores/addproveedores/addproveedores.component';
 import { AddpresupuestosComponent } from './presupuestos/addpresupuestos/addpresupuestos.component';
-import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresupuestosComponent } from './presupuestos/editpresupuestos/editpresupuestos.component';
 import { NuevousuarioComponent } from './autenticacion/nuevousuario/nuevousuario.component';
@@ -124,7 +132,9 @@ const rutas : Routes  = [
 
     ProveedoresService , 
 
-    PresupuestosService 
+    PresupuestosService ,
+
+    AutenticacionService,
 
   ],
 
