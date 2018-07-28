@@ -4,6 +4,7 @@
 <!-- routerLink : se usa en lugar de href -->
 <!-- routerLinkActive : si el link esta activo añade la clase 'active' de bootstrap al link -->
 <!-- [routerLinkActiveOptions]="{exact:true} : marca el link como activo cuando se este en esa ruta -->
+<!-- *ngIf="isAuth() : comprueba si el usuario tiene iniciada la sesion o no para gestionar la vissualizacion de los links -->
 
 <nav class="navbar bg-info  navbar-toggleable-md">
 
@@ -19,20 +20,24 @@
 
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
-        <li class="nav-item" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+        <li class="nav-item" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"  *ngIf="isAuth()" >
           <a class="nav-link" routerLink="/">Inicio </a>
         </li>
 
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active"  *ngIf="isAuth()" >
           <a class="nav-link" routerLink="/proveedores">Proveedores</a>
         </li>
 
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()" >
           <a class="nav-link" routerLink="/listpresupuestos">Presupuestos</a>
         </li>
 
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active" *ngIf="!isAuth()">
           <a class="nav-link" routerLink="/login">Iniciar Sesi&oacute;n</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
+            <a class="nav-link" (click)="onLogout()">Cerrar Sesi&oacute;n</a>
         </li>
 
       </ul>

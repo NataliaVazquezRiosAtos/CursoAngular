@@ -39,6 +39,9 @@ export class LoginComponent implements OnInit {
 
   userdata : any ;
 
+  // mensaje en caso de que el usuario o contraseña sea incorrecto
+  mensaje = false;
+
   // CONSTRUCTOR
 
   constructor( private formBuilder : FormBuilder ,
@@ -67,6 +70,17 @@ export class LoginComponent implements OnInit {
 
     this.autenticacionServicio.inicioSesion( this.userdata );
 
+    // se retrasa 2 segundos la colocacion del mensaje de error para que de tiempo a hacer la consulta al servidor
+    setTimeout( () => {
+
+      if ( this.isAuth() == false ) {
+
+        this.mensaje = true;
+
+      }
+
+    } , 2000 );
+
   }
 
   // para guardar el usuario en bbdd
@@ -81,6 +95,13 @@ export class LoginComponent implements OnInit {
     }
  
     return saveUserdata;
+
+  }
+
+   // metodo que devulve si el usuario a iniciado sesion o no
+   isAuth() {
+
+    return this.autenticacionServicio.isAuthenticated();
 
   }
 

@@ -76,7 +76,32 @@ export class AutenticacionService {
         }
 
       )
-      
+
+  }
+
+   // metodo que devuelve si el usuario ha iniciado sesion o no
+   isAuthenticated(){
+
+    const user = firebase.auth().currentUser;
+
+    if ( user ) {
+
+      return true ;
+
+    } else {
+
+      return false ;
+
+    }
+
+  }
+
+  // metodo para cerrar sesion
+
+  logout(){
+
+    firebase.auth().signOut();
+    
   }
 
 }
