@@ -23,7 +23,7 @@ import * as firebase from 'firebase';
 
 
 /*********************************************************************************************************/
-/**************************  IMPORTANCIONES DE NUESTROS SERVICIOS Y COMPONENTES **************************/
+/******************  IMPORTANCIONES DE NUESTROS SERVICIOS Y COMPONENTES  Y MODULO  ***********************/
 /*********************************************************************************************************/
 
 // servicios
@@ -43,6 +43,13 @@ import { EditpresupuestosComponent } from './presupuestos/editpresupuestos/editp
 import { NuevousuarioComponent } from './autenticacion/nuevousuario/nuevousuario.component';
 import { LoginComponent } from './autenticacion/login/login.component';
 
+import { AddfacturasComponent } from './facturas/facturas/addfacturas/addfacturas.component';
+
+
+// modulo
+import { FacturasModule } from './facturas/facturas.module';
+
+
 
 /*********************************************************************************************************/
 /*********************************************************************************************************/
@@ -50,7 +57,7 @@ import { LoginComponent } from './autenticacion/login/login.component';
 
 // RUTAS
 // creamos un array de constantes que contendra todas las rutas de la aplicacion
-//  canActivate : [ProteccionderutasService] : para proteger las rutas de la aplicacion
+// canActivate : [ProteccionderutasService] : para proteger las rutas de la aplicacion
 const rutas : Routes  = [
 
   // path : ruta
@@ -89,6 +96,10 @@ const rutas : Routes  = [
   // la ruta 'login' llama al componente LoginComponent
   { path : 'login' , component :  LoginComponent } , 
 
+  // RUTA DE LISTADO FACTURAS
+  // la ruta 'inicio/facturas/addfactura' llama al componente AddfacturasComponent
+  { path : 'inicio/facturas' , component : AddfacturasComponent , canActivate : [ProteccionderutasService] } , 
+
   // PARA RUTAS QUE NO EXISTEN
   // path : '**'  --> para rutas que no existen 
   // la ruta '**' llama al componente inicio
@@ -110,16 +121,16 @@ const rutas : Routes  = [
     PresupuestosComponent,
     EditpresupuestosComponent,
     NuevousuarioComponent,
-    LoginComponent
-
+    LoginComponent,
+    
   ],
 
-  // añadimos  componentes Angular  
+  // añadimos importaciones de  los modulos
   imports: [
 
     BrowserModule,
 
-    // añado la importacion de routing
+    // añadimos la importacion de routing
     // se establece un array de rutas que va a emplear nuestra aplicacion para cargar en la pagina
     // diferentes componentes
     RouterModule.forRoot(rutas),
@@ -131,7 +142,10 @@ const rutas : Routes  = [
     ReactiveFormsModule,
 
     // añadimos el componente Angular de Formularios
-    HttpModule
+    HttpModule,
+
+    // añadimos nuestro componente Facturas
+    FacturasModule
     
   ],
 

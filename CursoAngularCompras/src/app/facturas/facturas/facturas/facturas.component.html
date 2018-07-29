@@ -1,0 +1,64 @@
+<div class="text-center">
+  
+    <h3 class="text-success">LISTADO DE FACTURAS</h3>
+  
+    <a class=" btn btn-success float-left" routerLink="addfactura">A&ntilde;adir factura</a>
+  
+    <div class="table-responsive">
+  
+      <table class="table table-bordered">
+  
+        <thead>
+  
+          <tr class="filters bg-info">
+  
+            <th class="text-center">Proveedor</th>
+            <th class="text-center">Fecha</th>
+            <th class="text-center">Concepto</th>
+            <th class="text-center">Base Imponible</th>
+            <th class="text-center">Tipo IVA</th>  
+            <th class="text-center">Base IVA</th>    
+            <th class="text-center">Total</th> 
+            <th></th>
+            <th></th>           
+  
+          </tr>
+  
+        </thead>
+  
+        <tbody>
+
+          <!-- recojo todos los facturas de bbdd -->
+  
+          <tr *ngFor="let factura of facturas">
+  
+            <td> {{ factura.proveedor }} </td>
+            <td> {{ factura.fecha }} </td>
+            <td> {{ factura.concepto }} </td>
+            <td> {{ factura.baseimponible }} </td>
+            <td> {{ factura.tipoiva }} </td>
+            <td> {{ factura.importeiva }} </td>
+            <td> {{ factura.total }} </td>
+
+            <td>
+              <button type="button" class="btn btn-danger" title="eliminar factura" (click)="eliminarfactura(factura.id$)">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </td>
+
+            <td>
+              <button type="button" class="btn btn-success" title="editar factura" routerLink="editfactura/{{ factura.id$ }}">
+                <i class="far fa-edit"></i>
+              </button>
+            </td>                     
+          
+          </tr>
+  
+        </tbody>
+  
+      </table>
+  
+    </div>
+    
+  </div>
+  

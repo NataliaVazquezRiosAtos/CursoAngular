@@ -32,12 +32,16 @@
           <a class="nav-link" routerLink="inicio/listpresupuestos">Presupuestos</a>
         </li>
 
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
+          <a class="nav-link" routerLink="inicio/facturas">Facturas</a>
+        </li>
+
         <li class="nav-item" routerLinkActive="active" *ngIf="!isAuth()">
           <a class="nav-link" routerLink="/login">Iniciar Sesi&oacute;n</a>
         </li>
 
         <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
-            <a class="nav-link" (click)="onLogout()">Cerrar Sesi&oacute;n</a>
+            <button class="btn btn-success" (click)="onLogout()">Cerrar Sesi&oacute;n</button>
         </li>
 
       </ul>

@@ -26,39 +26,38 @@ import { map } from 'rxjs/operators';
 /*********************************************************************************************************/
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
-export class PresupuestosService {
+export class FacturasService {
 
   // ATRIBUTOS
 
-  // url para listar y añadir presupuestos
-  presURL = "https://cursoangularcompras.firebaseio.com/presupuestos.json";
+  // url para listar y añadir facturas
+  factsURL = "https://cursoangularcompras.firebaseio.com/facturas.json";
 
-  // url para actualizar presupuestos
-  preURL = "https://cursoangularcompras.firebaseio.com/presupuestos";
+  // url para listar y añadir facturas
+  factURL = "https://cursoangularcompras.firebaseio.com/facturas";
 
 
   // CONSTRUCTOR
-  constructor( private http : Http ) { }
+
+  constructor( private http: Http ) { }
 
 
   // METODOS
 
-  // metodo para insertar objetos presupuesto en la bbdd
-  postPresupuesto( presupuesto: any ) {
+  // metodo para insertar objetos factura en la bbdd
+  postFactura( factura : any ) {
 
-    const newpres = JSON.stringify( presupuesto );
+    const newfac = JSON.stringify( factura );
 
-    const headers = new Headers({
+    const headers = new Headers( {
 
-      'ContentType':'application/json'
+      'Content-Type': 'application/json'
 
     });
 
-    return this.http.post( this.presURL , newpres , { headers } )
+    return this.http.post( this.factsURL , newfac , { headers } )
 
       .pipe(map(res => {
 
@@ -67,13 +66,12 @@ export class PresupuestosService {
         return res.json();
 
       }));
-
   }
 
-  // metodo para listar los objetos presupuesto de la bbdd
-  getPresupuestos(){
+   // metodo para listar los objetos factura de la bbdd
+   getFacturas(){
 
-    return this.http.get( this.presURL )
+    return this.http.get( this.factsURL )
 
       .pipe(map(
         
@@ -85,11 +83,11 @@ export class PresupuestosService {
 
   // para actualizar un registro en la bbdd
   // primero tenemos que recoger el registro a actualizar en bbdd
-  getPresupuesto( id$: string ){
+  getFactura( id$: string ){
 
-    // url compuesta por la 'preURL' + id ( del objeto .json )
-    // se compone : https://cursoangularcompras.firebaseio.com/presupuestos/idDelObjeto.json
-    const url = `${this.preURL}/${id$}.json`;
+    // url compuesta por la 'factURL' + id ( del objeto .json )
+    // se compone : https://cursoangularcompras.firebaseio.com/facturas/idDelObjeto.json
+    const url = `${this.factURL}/${id$}.json`;
 
     return this.http.get(url)
 
@@ -102,9 +100,9 @@ export class PresupuestosService {
   }
 
   // despues lo actualizamos
-  putPresupuesto ( presupuesto : any , id$ : string ){
+  putFactura ( factura : any , id$: string ){
 
-    const newpre = JSON.stringify( presupuesto );
+    const newpre = JSON.stringify( factura );
 
     const headers = new Headers({
 
@@ -112,7 +110,7 @@ export class PresupuestosService {
 
     });
  
-    const url = `${this.preURL}/${id$}.json`;
+    const url = `${this.factURL}/${id$}.json`;
 
     return this.http.put( url , newpre , {headers} )
 
@@ -126,19 +124,19 @@ export class PresupuestosService {
 
   }
 
-  // para borrar un presupuesto de la base de datos
-  delPresupuesto( id$:string){
+ // para borrar un factura de la base de datos
+ delFactura( id$:string){
 
-    const url = `${this.preURL}/${id$}.json`;
+  const url = `${this.factURL}/${id$}.json`;
 
-    return this.http.delete(url)
+  return this.http.delete(url)
 
-      .pipe(map ( res =>
-        
-        res.json()
+    .pipe(map ( res =>
+      
+      res.json()
 
-      ));
+    ));
 
-  }
+}
 
 }

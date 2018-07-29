@@ -10,48 +10,49 @@ import { Component, OnInit } from '@angular/core';
 /*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS *********************************/
 /*********************************************************************************************************/
 
-// importo el servicio de presupuestos 
-import { PresupuestosService } from '../../servicios/presupuestos.service';
+// importo el servicio de facturas 
+import { FacturasService } from '../../servicios/facturas.service';
 
 
 /*********************************************************************************************************/
 /*********************************************************************************************************/
 /*********************************************************************************************************/
+
 
 @Component({
-  selector: 'app-presupuestos',
-  templateUrl: './presupuestos.component.html',
-  styleUrls: ['./presupuestos.component.css']
+  selector: 'app-facturas',
+  templateUrl: './facturas.component.html',
+  styleUrls: ['./facturas.component.css']
 })
 
-export class PresupuestosComponent implements OnInit {
+export class FacturasComponent implements OnInit {
 
   // ATRIBUTOS
 
-  presupuestos : any [] = [];
+  facturas : any [] = [];
 
   /*
       creamos el formato segun la estructura de Firebase
 
       para otras bbdd se necesitariamos una API de comunicacion que convierta los datos
 
-      se descompone el objeto que nos viene de bbdd de cada uno de los registros de presupuestos que nos devuelven de bbdd
+      se descompone el objeto que nos viene de bbdd de cada uno de los registros de facturas que nos devuelven de bbdd
 
       la propiedad 'id$' que tenemos en Firebase con estructura de arbol , 
       la convierte en una propiedad que tendremos nosotros en nuestro array del componente
 
   */
-  constructor( private presupuestoService : PresupuestosService  ) { 
+  constructor( private facturaService : FacturasService  ) { 
 
-    this.presupuestoService.getPresupuestos().subscribe(presupuestos =>{
+    this.facturaService.getFacturas().subscribe(facturas =>{
 
-      for ( const id$ in presupuestos ){
+      for ( const id$ in facturas ){
 
-        const p = presupuestos[id$];
+        const p = facturas[id$];
 
         p.id$ = id$;
 
-        this.presupuestos.push( presupuestos [id$] );
+        this.facturas.push( facturas [id$] );
         
       }
 
@@ -64,29 +65,29 @@ export class PresupuestosComponent implements OnInit {
 
   // para eliminar un registro
 
-  eliminarPresupuesto(id$) {
+  eliminarfactura(id$) {
 
-      this.presupuestoService.delPresupuesto(id$)
+      this.facturaService.delFactura(id$)
 
         .subscribe( res => {
 
-          // se vacia el array de presupuestos y se le vuelven a volcar los datos
-          // para que al eliminar el presupuesto se vea que se elimino en la lista
+          // se vacia el array de facturas y se le vuelven a volcar los datos
+          // para que al eliminar la factura se vea que se elimino en la lista
           // sin necesidad de tener que recargar la pagina
 
-          this.presupuestos = [] ;
+          this.facturas = [] ;
 
-          this.presupuestoService.getPresupuestos()
+          this.facturaService.getFacturas()
 
-            .subscribe( presupuestos => {
+            .subscribe( facturas => {
 
-              for ( const id$ in presupuestos ) {
+              for ( const id$ in facturas ) {
 
-                const p = presupuestos[id$] ;
+                const p = facturas[id$] ;
 
                 p.id$ = id$ ;
 
-                this.presupuestos.push(presupuestos[id$]);
+                this.facturas.push(facturas[id$]);
 
               }
 
@@ -97,4 +98,3 @@ export class PresupuestosComponent implements OnInit {
     }
 
 }
- 

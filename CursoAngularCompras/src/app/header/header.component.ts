@@ -11,12 +11,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 /*********************************************************************************************************/
-/*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS *********************************/
+/*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS  *********************************/
 /*********************************************************************************************************/
 
 
 // importo el servicio de autenticacion 
 import { AutenticacionService } from '../servicios/autenticacion.service';
+
+
+
 
 
 /*********************************************************************************************************/
@@ -55,7 +58,7 @@ export class HeaderComponent implements OnInit {
 
     this.autenticacionService.logout() ;
 
-    this.router.navigate(['/inicio']) ;
+    this.router.navigate(['']) ;
 
   }
 
