@@ -13,7 +13,12 @@
 
 import { Injectable } from '@angular/core';
 
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+// para emplear metodo post
+import { Headers , Http , Response } from '@angular/http';
+
+//import { Observable } from 'rxjs';
+
+import { map } from 'rxjs/operators';
 
 
 /*********************************************************************************************************/
@@ -29,42 +34,112 @@ export class ProveedoresService {
 
   // ATRIBUTOS
 
-  // inicializamos un array de provveedores que contienen objetos en formato JSON
-  proveedores : any = [
+  // url para listar y añadir proveedores
+  provsURL = "https://cursoangularcompras.firebaseio.com/proveedores.json";
 
-    { 
-      nombre: 'Telefónica', 
-      cif: 'B12345678', 
-      direccion: 'Paseo de la Castellana, 100', 
-      cp: '28.010', 
-      localidad: 'Madrid', 
-      provincia: 'Madrid', 
-      telefono: 911111111, 
-      email: 'info@telefonica.com', 
-      contacto: 'Juan Pérez'
-    },
+  // url para actualizar proveedores
+  provURL = "https://cursoangularcompras.firebaseio.com/proveedores";
 
-    { 
-      nombre: 'Iberdrola', 
-      cif: 'B87654321', 
-      direccion: 'Príncipe de Vergara, 200', 
-      cp: '28.015', 
-      localidad: 'Madrid', 
-      provincia: 'Madrid', 
-      telefono: 922222222, 
-      email: 'info@iberdrola.com',
-      contacto: 'Laura Martínez'
-    }
 
-  ]
+  // CONSTRUCTOR
+  constructor( private http : Http ) { }
 
-  // el modo de transladar el codigo de los servicios a los componenntes se hace mediante metodos
-  getProveedores(){
 
-    return this.proveedores;
+  id : string ;
+  // METODOS
+
+  // metodo para insertar objetos proveedor en la bbdd
+  postProveedor( proveedor: any ) {
+
+    const newpres = JSON.stringify( proveedor );
+
+    const headers = new Headers({
+
+      'ContentType':'application/json'
+
+    });
+
+    return this.http.post( this.provsURL , newpres , { headers } )
+
+      .pipe(map(res => {
+
+        console.log( res.json() );
+
+        return res.json();
+
+      }));
 
   }
 
-  constructor() { }
+  // metodo para listar los objetos proveedor de la bbdd
+  getProveedores(){
+
+    return this.http.get( this.provsURL )
+
+      .pipe(map(
+        
+        res => res.json()
+
+      ));
+      
+  }
+
+  // para actualizar un registro en la bbdd
+  // primero tenemos que recoger el registro a actualizar en bbdd
+  getProveedor( id$: string ){
+
+    // url compuesta por la 'provURL' + id ( del objeto .json )
+    // se compone : https://cursoangularcompras.firebaseio.com/proveedores/idDelObjeto.json
+    const url = `${this.provURL}/${id$}.json`;
+
+    return this.http.get(url)
+
+      .pipe(map(
+        
+        res => res.json()
+
+      ));
+
+  }
+
+  // despues lo actualizamos
+  putProveedor ( proveedor : any , id$ : string ){
+
+    const newpre = JSON.stringify( proveedor );
+
+    const headers = new Headers({
+
+      'ContentType':'application/json'
+
+    });
+ 
+    const url = `${this.provURL}/${id$}.json`;
+
+    return this.http.put( url , newpre , {headers} )
+
+      .pipe(map( res => {
+
+        console.log(res.json());
+
+        return res.json();
+
+      }));
+
+  }
+
+  // para borrar un proveedor de la base de datos
+  delProveedor( id$:string){
+
+    const url = `${this.provURL}/${id$}.json`;
+
+    return this.http.delete(url)
+
+      .pipe(map ( res =>
+        
+        res.json()
+
+      ));
+
+  }
 
 }

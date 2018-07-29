@@ -122,6 +122,7 @@ const rutas : Routes  = [
     EditpresupuestosComponent,
     NuevousuarioComponent,
     LoginComponent,
+    AddProveedoresComponent,
     
   ],
 

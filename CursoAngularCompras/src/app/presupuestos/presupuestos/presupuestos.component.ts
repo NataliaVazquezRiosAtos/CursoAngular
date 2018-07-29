@@ -43,7 +43,7 @@ export class PresupuestosComponent implements OnInit {
   */
   constructor( private presupuestoService : PresupuestosService  ) { 
 
-    this.presupuestoService.getPresupuestos().subscribe(presupuestos =>{
+    this.presupuestoService.getPresupuestos().subscribe( presupuestos =>{
 
       for ( const id$ in presupuestos ){
 

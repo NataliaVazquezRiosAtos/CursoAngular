@@ -28,32 +28,30 @@ export class ProveedoresComponent implements OnInit {
 
   // ATRIBUTOS
 
-  proveedores : any
+  proveedores : any [] = [] ;
 
   // mensaje : string ;
 
   // para que al iniciar el componente nos cargue el servicio , le pasamos al contructor un
   // objeto servicio
-  constructor( private proveedoresServicio : ProveedoresService) { }
+  constructor( private proveedoresServicio : ProveedoresService ) {
 
-  /*
+    this.proveedoresServicio.getProveedores().subscribe(proveedores =>{
 
-    se llama al metodo del servicio desde el componente ngOnInit() :
-    
-    relaiza una funcion semejante a la del constructor :
+      for ( const id$ in proveedores ){
 
-    cada vez que se inicialice dentro cel ciclo de vida de los componentes Angular,
+        const p = proveedores[id$];
 
-    este componente llevara a cabo el codigo que escribamos dentro
+        p.id$ = id$;
 
-  */
+        this.proveedores.push( proveedores [id$] );
+        
+      }
 
-  ngOnInit() {
+    })
 
-    this.proveedores = this.proveedoresServicio.getProveedores();
+   }
 
-    // this.mensaje = this.proveedoresServicio.getProveedores();
-    
-  }
+  ngOnInit() { }
 
 }

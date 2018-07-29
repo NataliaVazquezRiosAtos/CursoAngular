@@ -12,74 +12,61 @@
       <!-- los campos ( inputs ) del formulario, tienen que ser identificados como atributos del objeto formulario -->
       <!-- para ello, se añade a todos los inputs del formulario 'ngModel' y tamnien un name -->
 
-      <form class="row" (ngSubmit)="enviarFormularioProveedores()" #formProveedores="ngForm">
+      <form  class="row"  (ngSubmit)="onSubmit()" [formGroup]="proveedorForm">
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Nombre</label>
-          <input  type="text"  class="form-control"  id="nombre"  name="nombre"  ngModel>
+          <input  type="text"  class="form-control"  id="nombre"  formControlName="nombre" >
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>C.I.F.</label>
-          <input  type="text"  class="form-control"  id="cif"  name="cif"  ngModel>
+          <input  type="text"  class="form-control"  id="cif" formControlName="cif">
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">       
           <label>Dirección</label>
-          <input  type="text"  class="form-control"  id="direccion"  name="direccion"  ngModel>
+          <input  type="text"  class="form-control"  id="direccion"  formControlName="direccion" >
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Código Postal</label>
-          <input  type="text"  class="form-control"  id="cp"  name="cp" ngModel>
+          <input  type="text"  class="form-control"  id="cp"  formControlName="cp">
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Localidad</label>
-          <input  type="text"  class="form-control"  id="localidad"   name="localidad"  ngModel>
+          <input  type="text"  class="form-control"  id="localidad"   formControlName="localidad">
         </div>
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Provincia</label>
-          <select  class="form-control"  id="provincia"  name="provincia"  ngModel>
+          <select  class="form-control"  id="provincia"  formControlName="provincia">
             <option  value="">-- Provincia --</option>
             <option  *ngFor="let provincia of provincias"  [value]="provincia"> {{ provincia }}</option>
           </select>
-        </div>       
-        
+        </div>     
+                
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-          <label>Teléfono</label>
-          <input type="number"  class="form-control"  id="telefono"  name="telefono"  ngModel>
+          <label>Correo Electrónico</label>        
+          <input type="text" class="form-control"  id="email"  name="email"  required email formControlName="email">        
         </div>
 
-
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-
-          <label>Correo Electrónico</label>
-
-          <!-- mensaje de validacion correcta -->
-          <i class="fa fa-check-circle check" *ngIf="email.valid" > </i>
-
-          <!-- mensaje de validacion incorrecta -->
-          <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched" ></i>
-
-          <input type="text" class="form-control"  id="email"  name="email" ngModel required email  #email="ngModel">
-
-          <p class="alert alert-danger" *ngIf="email.invalid && email.touched" >Introduzca un email v&aacute;lido.</p>
-        
+          <label>Tel&eacute;fono</label> 
+          <input type="text" class="form-control"  id="telefono"  name="telefono"   formControlName="telefono">
         </div>
-
 
         <div class="form-group col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <label>Persona de contacto</label>
-          <input type="text"  class="form-control"  id="contacto"  name="contacto"  ngModel>
+          <input type="text"  class="form-control"  id="contacto"  formControlName="contacto">
         </div>
 
         <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
           <!-- muestro el boton de envio de formmulario desabilitado si no está totalmente completo -->
           <!-- lo mostrara habilitado cuando tenga los campos rellenos -->
-          <button type="submit" class="btn btn-success" [disabled]="!formProveedores.valid">
+          <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">
             Añadir Proveedor
           </button>
 
@@ -88,6 +75,8 @@
       </form>
 
       <!-- comprobamos que nos añade el objeto al enviar el formulario -->
+
+      <!-- 
 
       <hr>
 
@@ -105,6 +94,7 @@
 
       <hr>
 
+    -->
     </div> 
 
   </div>

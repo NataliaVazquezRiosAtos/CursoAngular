@@ -19,6 +19,9 @@ import { FormControl , FormGroup , FormBuilder , Validator , Validators } from '
 // importamos el servicio de presupuestos
 import { PresupuestosService } from '../../servicios/presupuestos.service';
 
+// importamos el servicio de proveedores
+import { ProveedoresService } from '../../servicios/proveedores.service';
+
 
 /*********************************************************************************************************/
 /*********************************************************************************************************/
@@ -51,12 +54,33 @@ export class AddpresupuestosComponent implements OnInit {
   importeiva: any = 0;
 
   total: any = 0;
+
+  // para cargar el select de proveedores
+
+  proveedores : any [] = [] ;
   
 
   // CONSTRUCTOR
 
   constructor(  private pf: FormBuilder , 
-                private  presupuestoService : PresupuestosService ) { }
+                private  presupuestoService : PresupuestosService ,
+                private proveedsoresService : ProveedoresService ) { 
+
+    this.proveedsoresService.getProveedores().subscribe( proveedores =>{
+
+      for ( const id$ in proveedores ){
+              
+        const p = proveedores[id$];
+              
+        p.id$ = id$;
+              
+        this.proveedores.push( proveedores [id$] );
+                      
+      }
+              
+    })
+  
+  }
 
   ngOnInit() {
 
