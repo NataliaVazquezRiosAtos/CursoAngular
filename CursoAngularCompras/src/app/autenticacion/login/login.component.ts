@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
   // mensaje en caso de que el usuario o contraseña sea incorrecto
   mensaje = false;
 
+  // para spinner usuario autenticando
+  autenticando = false ;
+
   // CONSTRUCTOR
 
   constructor( private formBuilder : FormBuilder ,
@@ -66,6 +69,8 @@ export class LoginComponent implements OnInit {
   // despues , a traves de nuestro servicio de autenticacion , registramos el usuario en firebase 
   onSubmit() {
 
+    this.autenticando = true ;
+
     this.userdata = this.saveUserdata();
 
     this.autenticacionServicio.inicioSesion( this.userdata );
@@ -75,7 +80,9 @@ export class LoginComponent implements OnInit {
 
       if ( this.isAuth() == false ) {
 
-        this.mensaje = true;
+        this.mensaje = true ;
+
+        this.autenticando = false ;
 
       }
 

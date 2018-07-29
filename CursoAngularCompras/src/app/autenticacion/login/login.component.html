@@ -35,14 +35,17 @@
          
         <div class="form-group">  
 
-          <button type="submit" class="btn btn-info " [disabled]="!loginForm.valid">
+          <button type="submit" class="btn btn-info " [disabled]="!loginForm.valid"  *ngIf="!autenticando">
 
             Iniciar Sesi&oacute;n
 
           </button> 
           
-          <br/>
-
+          <!-- boton auntenticando -->
+          <button  type="submit"  class="btn btn-info"  *ngIf="autenticando">
+            Autenticando usuario ...
+          </button>
+          
           <p class="registro">
             
             <a class="text-success" routerLink="/nuevousuario">Registrarse</a>
