@@ -1,12 +1,18 @@
-<div class="text-center">
+<!-- para el spinner -->
 
-  <hr>
+<div  class="text-center"  *ngIf="cargando">
+
+    <img src="../../../assets/imgs/loader.gif" alt="">
+
+  </div>
+
+<div *ngIf="!cargando" class="text-center">
 
   <h3 class="text-success">LISTADO</h3>
 
   <a class=" btn btn-success float-left" routerLink="addproveedores">A&ntilde;adir Proveedor</a>
 
-  <div class="table-responsive">
+  <div  class="table-responsive">
 
     <table class="table table-bordered">
 

@@ -30,6 +30,9 @@ export class ProveedoresComponent implements OnInit {
 
   proveedores : any [] = [] ;
 
+  // para spinners
+  cargando = true;
+
   // mensaje : string ;
 
   // para que al iniciar el componente nos cargue el servicio , le pasamos al contructor un
@@ -47,6 +50,8 @@ export class ProveedoresComponent implements OnInit {
         this.proveedores.push( proveedores [id$] );
         
       }
+
+      this.cargando = false;
 
     })
 
