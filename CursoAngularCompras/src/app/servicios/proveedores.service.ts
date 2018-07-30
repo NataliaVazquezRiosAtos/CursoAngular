@@ -19,6 +19,7 @@ import { Headers , Http , Response } from '@angular/http';
 //import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
+import { pipe } from '../../../node_modules/@angular/core/src/render3/pipe';
 
 
 /*********************************************************************************************************/
@@ -35,111 +36,121 @@ export class ProveedoresService {
   // ATRIBUTOS
 
   // url para listar y añadir proveedores
-  provsURL = "https://cursoangularcompras.firebaseio.com/proveedores.json";
+  provURL = "https://cursoangularcompras.firebaseio.com/proveedores.json";
 
   // url para actualizar proveedores
-  provURL = "https://cursoangularcompras.firebaseio.com/proveedores";
+  proURL = "https://cursoangularcompras.firebaseio.com/proveedores";
 
 
   // CONSTRUCTOR
+
   constructor( private http : Http ) { }
 
+    // metodo para insertar objetos proveedores en la bbdd    
+    postProveedor( proveedor : any ){
 
-  id : string ;
-  // METODOS
+      const newpres = JSON.stringify( proveedor );
 
-  // metodo para insertar objetos proveedor en la bbdd
-  postProveedor( proveedor: any ) {
+      const headers = new Headers({
 
-    const newpres = JSON.stringify( proveedor );
+        'Content-Type': 'application/json'
 
-    const headers = new Headers({
+      });
 
-      'ContentType':'application/json'
+      return this.http.post( this.provURL, newpres, { headers } )
 
-    });
+        .pipe( map ( res => {
 
-    return this.http.post( this.provsURL , newpres , { headers } )
+          console.log( res.json() );
 
-      .pipe(map(res => {
+          return res.json();
 
-        console.log( res.json() );
-
-        return res.json();
-
-      }));
+      }))
 
   }
 
   // metodo para listar los objetos proveedor de la bbdd
-  getProveedores(){
+  getProveedores() {
 
-    return this.http.get( this.provsURL )
+    return this.http.get( this.provURL )
 
-      .pipe(map(
+      .pipe ( map ( res => {  
         
-        res => res.json()
+        res.json(); 
 
-      ));
-      
+      }))
+
   }
 
   // para actualizar un registro en la bbdd
-  // primero tenemos que recoger el registro a actualizar en bbdd
-  getProveedor( id$: string ){
+  // primero lo recogemos 
+  getProveedor( id$ : string ) {
 
-    // url compuesta por la 'provURL' + id ( del objeto .json )
-    // se compone : https://cursoangularcompras.firebaseio.com/proveedores/idDelObjeto.json
-    const url = `${this.provURL}/${id$}.json`;
+    // url compuesta por la 'preURL' + id ( del objeto .json )
+    // se compone : https://cursoangularcompras.firebaseio.com/proveedores/idDelObjeto.json    
+     const url = `${this.proURL}/${id$}.json`;
 
-    return this.http.get(url)
+     return this.http.get( url )
 
-      .pipe(map(
+     .pipe ( map ( res => {  
         
-        res => res.json()
+        res.json(); 
 
-      ));
+      }))
 
   }
 
+  // para actualizar un registro en la bbdd
   // despues lo actualizamos
-  putProveedor ( proveedor : any , id$ : string ){
+  putProveedor( proveedor : any, id$ : string ){
 
     const newpre = JSON.stringify( proveedor );
 
-    const headers = new Headers({
+    const headers = new Headers( {
 
-      'ContentType':'application/json'
+      'Content-Type': 'application/json'
 
     });
- 
-    const url = `${this.provURL}/${id$}.json`;
 
-    return this.http.put( url , newpre , {headers} )
+    const url = `${this.proURL}/${id$}.json`;
 
-      .pipe(map( res => {
+    return this.http.put( url, newpre, { headers } )
 
-        console.log(res.json());
+        .pipe(map ( res => {
 
-        return res.json();
+          console.log(res.json());
 
-      }));
+          return res.json();
+
+        }))  
 
   }
 
-  // para borrar un proveedor de la base de datos
-  delProveedor( id$:string){
+  // metodo para listar los objetos proveedor de la bbdd
+  delProveedor ( id$ : string ) {
 
-    const url = `${this.provURL}/${id$}.json`;
+    const url = `${this.proURL}/${id$}.json`;
 
-    return this.http.delete(url)
+    return this.http.delete( url )
+      .pipe ( map ( res => {  
+            
+            res.json(); 
 
-      .pipe(map ( res =>
+          }))
+  }
+// metodo para buscador proveedor en bbdd
+  getProveedoresSearch( busqueda : string ) {
+
+    const url = `${ this.provURL }?orderBy="nombre"&startAt="${ busqueda }"&endAt="${ busqueda }\uf8ff"`;
+
+    return this.http.get( url )
+
+        .pipe ( map ( res => {  
         
-        res.json()
+        res.json(); 
 
-      ));
-
+      }))
+      
   }
 
-}
+}  

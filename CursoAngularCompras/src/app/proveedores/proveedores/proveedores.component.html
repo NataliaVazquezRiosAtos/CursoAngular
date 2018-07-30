@@ -2,11 +2,16 @@
 
 <div  class="text-center"  *ngIf="cargando">
 
-    <img src="../../../assets/imgs/loader.gif" alt="">
+  <img src="../../../assets/imgs/loader.gif" alt="">
 
-  </div>
+</div>
 
-<div *ngIf="!cargando" class="text-center">
+  <!-- buscador -->
+  <input class="form-control" type="search" placeholder="Buscar proveedor ..."  [formControl] ="campoBusqueda" >
+
+ 
+
+<div *ngIf="resultados" class="text-center">
 
   <h3 class="text-success">LISTADO</h3>
 
@@ -45,5 +50,11 @@
   </div>
 
   <hr>
+
+</div>
+
+<div *ngIf="noresultados" class="text-center" >
+
+  <h1 class="text-success"> Sin resutados para la b&uacute;squeda.</h1>
 
 </div>

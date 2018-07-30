@@ -42,7 +42,7 @@ export class AddProveedoresComponent implements OnInit {
   proveedorForm : FormGroup;
 
   // objeto proveedor
-  proveedor : any;
+  proveedor : any ;
 
   // para valueChangues : para hacer operaciones aritmeticas en tiemoo real :
   // nos va a calcular el valo total segun los valores de baseimponible e iva

@@ -5,6 +5,9 @@
 
 import { Component , OnInit } from '@angular/core';
 
+// para formularios
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 /*********************************************************************************************************/
 /*********************************  IMPORTANCIONES DE NUESTROS SERVICIOS *********************************/
@@ -31,32 +34,89 @@ export class ProveedoresComponent implements OnInit {
   proveedores : any [] = [] ;
 
   // para spinners
-  cargando = true;
+  cargando = false ;
 
-  // mensaje : string ;
+  // para el buscador
+  campoBusqueda: FormControl ;
+
+  busqueda: string ;
+
+  resultados = true ;
+
+  noresultados = false;
+  
 
   // para que al iniciar el componente nos cargue el servicio , le pasamos al contructor un
   // objeto servicio
-  constructor( private proveedoresServicio : ProveedoresService ) {
+  constructor(private proveedoresServicio: ProveedoresService) {
+   /* this.proveedoresServicio.getProveedores()
+       .subscribe(proveedores => {
+         for (const id$ in proveedores) {
+           const p = proveedores[id$];
+           p.id$ = id$;
+           this.proveedores.push(proveedores[id$]);
+         }
+       })*/
+}
 
-    this.proveedoresServicio.getProveedores().subscribe(proveedores =>{
 
-      for ( const id$ in proveedores ){
+  ngOnInit() {
 
-        const p = proveedores[id$];
+    this.campoBusqueda = new FormControl();
 
-        p.id$ = id$;
+    this.campoBusqueda.valueChanges.subscribe( term => {
 
-        this.proveedores.push( proveedores [id$] );
-        
+      this.busqueda = term ;
+
+      this.cargando = true ;
+
+      // cuandocontenga algun caracter el campo de busqueda
+
+      if (this.busqueda.length !==0 ){
+
+        this.proveedoresServicio.getProveedoresSearch( this.busqueda ).subscribe ( proveedores => {
+
+          this.proveedores = [];
+
+          for ( const id$ in proveedores ) {
+
+            const p = proveedores[id$];
+
+            p.id$ = id$ ;
+
+            this.proveedores.push( proveedores [id$] );
+
+          }
+
+          if ( proveedores.lenght <1 && this.busqueda.length >=1 ){
+
+            this.noresultados = true ;
+
+          } else {
+
+            this.noresultados = false ;
+
+          }
+
+        })
+
+        this.cargando = false ;
+
+        this.resultados = true ;
+
+
+      } else {
+
+        this.proveedores = [] ;
+
+        this.cargando = false ;
+
+        this.resultados = false ;
+
       }
-
-      this.cargando = false;
 
     })
 
-   }
-
-  ngOnInit() { }
+  }
 
 }

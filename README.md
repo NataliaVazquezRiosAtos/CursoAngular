@@ -289,13 +289,24 @@ FIREBASE
 
                 "rules": {
 
-                ".read": true,
+                    ".read": true,
 
-                ".write": true
+                    ".write": true,
+
+                    /* creamos un indice en la base de datos en la propiedad nombre de proveedores para la busqueda */
+
+                    "proveedores" : {    
+
+                        ".indexOn":["nombre"]
+                        
+                    }
 
                 }
 
             }
+
+        
+
 
 
 

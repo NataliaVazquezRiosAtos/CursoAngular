@@ -19,6 +19,7 @@ import { Headers , Http , Response } from '@angular/http';
 //import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
+import { pipe } from '../../../node_modules/@angular/core/src/render3/pipe';
 
 
 /*********************************************************************************************************/
